@@ -1,0 +1,7 @@
+.Toastify__toast {
+  font-family: inherit;
+  @apply p-4 w-full overflow-hidden bg-white shadow-lg ring-1 text-gray-950 font-medium ring-black/5 rounded-lg !important;
+}
+.Toastify__toast-body {
+  @apply flex items-center m-0 p-0 !important;
+}
