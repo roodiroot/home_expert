@@ -1,11 +1,16 @@
 {
   "name": "renovation-client",
-  "version": "0.1.0",
+  "version": "1.1.0",
+  "author": {
+    "name": "@roodiroot",
+    "email": "borisov130490@gmail.com",
+    "url": "https://github.com/roodiroot"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5002",
     "lint": "next lint"
   },
   "dependencies": {
