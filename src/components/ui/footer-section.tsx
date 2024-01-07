@@ -25,29 +25,56 @@ const FooterSection = () => {
             <div>
               <h3 className='text-sm font-semibold leading-6'>Телефоны</h3>
               <ul className='mt-6 space-y-4'>
-                <li className=''>89876821001</li>
-                <li className=''>89876821001</li>
+                <li className=''>
+                  <a
+                    className='font-medium'
+                    href={`tel:${process.env.NEXT_PUBLIC_PHONE1}`}
+                  >
+                    {process.env.NEXT_PUBLIC_PHONE1}
+                  </a>
+                </li>
+                <li className=''>
+                  <a
+                    className='font-medium'
+                    href={`tel:${process.env.NEXT_PUBLIC_PHONE2}`}
+                  >
+                    {process.env.NEXT_PUBLIC_PHONE2}
+                  </a>
+                </li>
               </ul>
             </div>
             <div className='mt-10 md:mt-0'>
               <h3 className='text-sm font-semibold leading-6'>Почты</h3>
               <ul className='mt-6 space-y-4'>
-                <li className=''>voodivood@gmail.com</li>
-                <li className=''>voodivood@gmail.com</li>
+                <li className='flex flex-col '>
+                  <span className='text-sm'>карьера:</span>
+                  <a
+                    className='font-medium'
+                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL1}`}
+                  >
+                    {process.env.NEXT_PUBLIC_EMAIL1}
+                  </a>
+                </li>
+                <li className='flex flex-col'>
+                  <span className='text-sm'>задать вопрос:</span>
+                  <a
+                    className='font-medium'
+                    href={`mailto:${process.env.NEXT_PUBLIC_EMAIL2}`}
+                  >
+                    {process.env.NEXT_PUBLIC_EMAIL2}
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className='md:grid md:grid-cols-1 md:gap-8'>
             <div className='mt-10 md:mt-0'>
               <h3 className='text-sm font-semibold leading-6'>Разработка</h3>
-              <ul className='mt-6 space-y-4'>
-                <li>
-                  Этот сайт придумала и разработала веб студия{" "}
-                  <span className='font-semibold'>"Матрёшка"</span>
-                </li>
+              <ul className='mt-6 space-y-4 text-sm leading-5'>
                 <li className=''>
                   <a href='https://matryoshka-studio.ru'>
-                    matryoshka-studio.ru
+                    Этот сайт придумала и разработала веб студия{" "}
+                    <span className='font-semibold'>"Матрёшка"</span>
                   </a>
                 </li>
               </ul>

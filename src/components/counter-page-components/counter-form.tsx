@@ -1,41 +1,129 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+import RangeInput from "../counter-inputs/range-input";
 import { Button } from "../ui/elements-button";
-import { InputElement } from "../ui/input-element";
+import SelectInput from "../counter-inputs/select-input";
+import TotalSumm from "../counter-inputs/total-summ";
+import InfoInput from "../counter-inputs/info-input";
+import { sendMessage } from "@/lib/send-message";
+import PolicyText from "../ui/policy-text";
+
+const defaultValue = 35;
+const typeValue = [
+  { name: "Новостройка", value: "0.8" },
+  { name: "Вторичка", value: "1" },
+];
+const electricValue = [
+  { name: "Надо", value: "40000" },
+  { name: "Уже готово", value: "0" },
+];
+const floorValues = [
+  { name: "Без покрытия", value: "0" },
+  { name: "Плитка", value: "450" },
+  { name: "Ламинат", value: "550" },
+  { name: "Линолиум", value: "300" },
+];
+
+export type CounterForm = {
+  name: string;
+  phone: string;
+};
 
 interface CounterFormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
+  const [square, setSquare] = useState(defaultValue);
+  const [type, setType] = useState("1");
+  const [electric, setElectric] = useState("0");
+  const [floor, setFloor] = useState("0");
+
+  const [summ, setSumm] = useState(0);
+  const [disabled, setDisabled] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<CounterForm>();
+
+  const onSubmit: SubmitHandler<CounterForm> = async (data) => {
+    setDisabled(true);
+    await sendMessage({ ...data, square, type, electric, floor, summ })
+      .then((d) => {
+        if (d) {
+          reset();
+          setDisabled(false);
+        }
+      })
+      .finally(() => setDisabled(false));
+  };
+
+  const regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+
+  useEffect(() => {
+    setSumm(
+      square * 3000 * Number(type) + Number(electric) + Number(floor) * square
+    );
+  }, [square, type, electric, floor]);
+
   return (
     <form className={className} action='' onClick={(e) => e.preventDefault()}>
-      <div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
-        {/* <InputElement
-          labelOn
-          placeholder='Введите имя'
+      <div className='grid grid-cols-1 gap-x-8 gap-y-6'>
+        <RangeInput
+          title='1. Общая площадь квартиры в квадратных метрах'
+          description='Укажите площадь квартиры от 45 до 250 м²'
+          value={square}
+          setValue={setSquare}
+          defaultValue={defaultValue}
+        />
+        <SelectInput
+          title='2. Тип жилья'
+          label='Типы недвижимости'
+          setValue={setType}
+          placeholder='Выберите тип'
+          values={typeValue}
+        />
+        <SelectInput
+          title='3. Разводка электрики'
+          setValue={setElectric}
+          placeholder='Выберите нужное'
+          values={electricValue}
+        />
+        <SelectInput
+          title='4. Покрытие пола'
+          label='Типы покрытий'
+          setValue={setFloor}
+          placeholder='Выберите нужное'
+          values={floorValues}
+        />
+        <TotalSumm
+          title='Стоимость ремонта'
+          description='Стоимость является приблизительной.'
+          value={summ}
+        />
+        <InfoInput
           id='name'
-          label='Имя*'
+          title='Введите ваше имя'
+          placeholder='Ваше имя'
+          register={register}
+          errors={errors}
         />
-        <InputElement
-          labelOn
-          placeholder='Введите телефон'
+        <InfoInput
           id='phone'
-          label='Телефон*'
+          title='Введите ваш номер'
+          placeholder='Ваш телефон'
+          pattern={regExp}
+          register={register}
+          errors={errors}
         />
-        <InputElement
-          labelOn
-          placeholder='Введите email'
-          id='email'
-          label='Email'
-          className='sm:col-span-2'
-        />
-        <AreaElement
-          id='message'
-          label='Сообщение'
-          labelOn
-          className='sm:col-span-2'
-        /> */}
+        <PolicyText />
       </div>
       <div className='mt-10 flex justify-end border-t pt-8'>
-        <Button>Рассчитать</Button>
+        <Button disabled={disabled} onClick={handleSubmit(onSubmit)}>
+          Заказать ремонт
+        </Button>
       </div>
     </form>
   );

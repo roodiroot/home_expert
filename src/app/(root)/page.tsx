@@ -1,4 +1,3 @@
-import AbsoluteElements from "@/components/absolute-elements/absolute-elements";
 import ContactSection from "@/components/page/main-page/contact-section";
 import CTASection from "@/components/page/main-page/cta-section";
 import { FaqSection } from "@/components/page/main-page/faq-section";
@@ -67,7 +66,6 @@ export default function Home() {
         />
         <ContactSection pattern={pattern} />
       </main>
-      <AbsoluteElements />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import AbsoluteElements from "@/components/absolute-elements/absolute-elements";
 import FooterSection from "@/components/ui/footer-section";
 
 export default function MainLayout({
@@ -9,6 +10,7 @@ export default function MainLayout({
     <section>
       {children}
       <FooterSection />
+      <AbsoluteElements />
     </section>
   );
 }

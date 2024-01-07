@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-import CounterFormProps from "@/components/counter-page-components/counter-form";
+import CounterForm from "@/components/counter-page-components/counter-form";
 import { DescriptionElement, TitleElement } from "@/components/ui/h2-element";
 import Logo from "@/components/ui/logo";
 
 export default function Counter() {
   return (
-    <div className='bg-white'>
-      <div className='lg:absolute lg:inset-0 lg:left-1/2'>
+    <div className='bg-white relative'>
+      <div className='lg:absolute lg:inset-0 lg:left-1/2 '>
         <Image
           alt='design screnshot'
           src='/image/counter.jpg'
@@ -23,9 +23,9 @@ export default function Counter() {
             <TitleElement text='Расчет стоимости ремонта' className='mt-16' />
             <DescriptionElement
               className='mt-2'
-              text='Просто введите необходимые параметры вашего помещения и получите мгновенный, предварительный расчет стоимости ремонта помещения за несколько кликов. Нажмите на кнопку рассчитать.'
+              text='Просто введите необходимые параметры вашего помещения и получите мгновенный, предварительный расчет стоимости ремонта помещения за несколько кликов.'
             />
-            <CounterFormProps className='mt-16' />
+            <CounterForm className='mt-16' />
           </div>
         </div>
       </div>
