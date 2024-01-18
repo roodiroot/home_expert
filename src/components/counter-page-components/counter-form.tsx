@@ -13,19 +13,20 @@ import PolicyText from "../ui/policy-text";
 
 const defaultValue = 35;
 const typeValue = [
-  { name: "Новостройка", value: "0.8" },
-  { name: "Вторичка", value: "1" },
+  { name: "Новостройка", value: "12500" },
+  { name: "Коттедж", value: "12000" },
+  { name: "Вторичка", value: "14000" },
 ];
-const electricValue = [
-  { name: "Надо", value: "40000" },
-  { name: "Уже готово", value: "0" },
+const disignValue = [
+  { name: "Надо", value: "20000" },
+  { name: "Уже есть", value: "0" },
 ];
-const floorValues = [
-  { name: "Без покрытия", value: "0" },
-  { name: "Плитка", value: "450" },
-  { name: "Ламинат", value: "550" },
-  { name: "Линолиум", value: "300" },
-];
+// const floorValues = [
+//   { name: "Без покрытия", value: "0" },
+//   { name: "Плитка", value: "450" },
+//   { name: "Ламинат", value: "550" },
+//   { name: "Линолиум", value: "300" },
+// ];
 
 export type CounterForm = {
   name: string;
@@ -35,9 +36,8 @@ export type CounterForm = {
 interface CounterFormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const [square, setSquare] = useState(defaultValue);
-  const [type, setType] = useState("1");
-  const [electric, setElectric] = useState("0");
-  const [floor, setFloor] = useState("0");
+  const [type, setType] = useState("0");
+  const [disign, setDisign] = useState("0");
 
   const [summ, setSumm] = useState(0);
   const [disabled, setDisabled] = useState(false);
@@ -50,7 +50,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
 
   const onSubmit: SubmitHandler<CounterForm> = async (data) => {
     setDisabled(true);
-    await sendMessage({ ...data, square, type, electric, floor, summ })
+    await sendMessage({ ...data, square, type, disign, summ })
       .then((d) => {
         if (d) {
           reset();
@@ -63,10 +63,8 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 
   useEffect(() => {
-    setSumm(
-      square * 3000 * Number(type) + Number(electric) + Number(floor) * square
-    );
-  }, [square, type, electric, floor]);
+    setSumm(square * Number(type) + Number(disign));
+  }, [square, type, disign]);
 
   return (
     <form className={className} action='' onClick={(e) => e.preventDefault()}>
@@ -86,18 +84,18 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           values={typeValue}
         />
         <SelectInput
-          title='3. Разводка электрики'
-          setValue={setElectric}
+          title='3. Разработка дизайн проекта'
+          setValue={setDisign}
           placeholder='Выберите нужное'
-          values={electricValue}
+          values={disignValue}
         />
-        <SelectInput
+        {/* <SelectInput
           title='4. Покрытие пола'
           label='Типы покрытий'
           setValue={setFloor}
           placeholder='Выберите нужное'
           values={floorValues}
-        />
+        /> */}
         <TotalSumm
           title='Стоимость ремонта'
           description='Стоимость является приблизительной.'
@@ -114,6 +112,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           id='phone'
           title='Введите ваш номер'
           placeholder='Ваш телефон'
+          inputMode='tel'
           pattern={regExp}
           register={register}
           errors={errors}

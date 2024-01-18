@@ -56,6 +56,7 @@ const ContactForm = () => {
           placeholder='Введите телефон'
           id='phone'
           label='Телефон*'
+          inputMode='tel'
           {...register("phone", { pattern: regExp, required: true })}
           ariaInvalid={errors.phone ? true : false}
         />
@@ -63,6 +64,7 @@ const ContactForm = () => {
           labelOn
           placeholder='Введите email'
           id='email'
+          inputMode='email'
           label='Email'
           {...register("email", { pattern: /.+@.+\..+/i })}
           ariaInvalid={errors.email ? true : false}

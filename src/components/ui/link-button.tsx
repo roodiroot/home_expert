@@ -13,11 +13,11 @@ const LinkButton: React.FC<LinkButton> = ({
     <a
       {...props}
       className={cn(
-        "text-sm font-semibold px-3.5 py-2.5 flex items-center gap-x-2 leading-6 text-gray-900",
+        "text-sm font-semibold px-3.5 py-2.5 flex items-center gap-x-2 leading-6 text-gray-900 whitespace-nowrap",
         className
       )}
     >
-      <span>{children}</span>
+      <span className='whitespace-nowrap text-sm sm:text-base'>{children}</span>
       <span>
         <svg
           width='13'

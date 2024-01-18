@@ -20,6 +20,7 @@ const InfoInput: React.FC<InfoInputProps> = ({
   title,
   description,
   className,
+  inputMode = "text",
   register,
   errors,
   placeholder,
@@ -34,6 +35,7 @@ const InfoInput: React.FC<InfoInputProps> = ({
           id={id}
           placeholder={placeholder}
           label=''
+          inputMode={inputMode}
           {...register(id, { required: true, pattern: pattern || undefined })}
           ariaInvalid={errors[id] ? true : false}
         />

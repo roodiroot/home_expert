@@ -108,6 +108,7 @@ const ModalSendOrder = () => {
                         id='phone'
                         label='Телефон*'
                         className='mt-4'
+                        inputMode='tel'
                         {...register("phone", {
                           pattern: regExp,
                           required: true,

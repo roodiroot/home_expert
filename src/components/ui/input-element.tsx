@@ -11,7 +11,16 @@ interface InputElementProps
 
 const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
   (
-    { label, labelOn, className, id, placeholder, ariaInvalid, ...props },
+    {
+      label,
+      inputMode = "text",
+      labelOn,
+      className,
+      id,
+      placeholder,
+      ariaInvalid,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -31,8 +40,9 @@ const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
           {...props}
           id={id}
           placeholder={placeholder}
+          inputMode={inputMode}
           className={cn(
-            "w-full min-w-0 flex-auto rounded-md border px-3.5 py-2 text-gray-900 border-gray-50 placeholder:text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 text-sm sm:leading-6 focus:outline-accent-600",
+            "w-full min-w-0 flex-auto rounded-md border px-3.5 py-2 text-gray-900 border-gray-300 placeholder:text-gray-400 placeholder:font-light shadow-sm  text-sm sm:leading-6 focus:outline-accent-600",
             ariaInvalid &&
               "ring-rose-600 placeholder:text-rose-600 focus:outline-rose-600"
           )}
