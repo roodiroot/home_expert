@@ -54,6 +54,7 @@ const PromptForm = () => {
           labelOn
           placeholder='Введите телефон'
           id='phone'
+          inputMode='tel'
           label='Телефон*'
           {...register("phone", { pattern: regExp, required: true })}
           ariaInvalid={errors.phone ? true : false}
