@@ -25,7 +25,8 @@ const FooterSection = () => {
             <div>
               <h3 className='text-sm font-semibold leading-6'>Телефоны</h3>
               <ul className='mt-6 space-y-4'>
-                <li className=''>
+                <li className='flex flex-col'>
+                  <span className='text-sm'></span>
                   <a
                     className='font-medium'
                     href={`tel:${process.env.NEXT_PUBLIC_PHONE1}`}
@@ -33,7 +34,8 @@ const FooterSection = () => {
                     {process.env.NEXT_PUBLIC_PHONE1}
                   </a>
                 </li>
-                <li className=''>
+                <li className='flex flex-col'>
+                  <span className='text-sm'></span>
                   <a
                     className='font-medium'
                     href={`tel:${process.env.NEXT_PUBLIC_PHONE2}`}
@@ -49,7 +51,7 @@ const FooterSection = () => {
                 <li className='flex flex-col '>
                   <span className='text-sm'>карьера:</span>
                   <a
-                    className='font-medium'
+                    className='font-medium whitespace-nowrap'
                     href={`mailto:${process.env.NEXT_PUBLIC_EMAIL1}`}
                   >
                     {process.env.NEXT_PUBLIC_EMAIL1}
@@ -58,7 +60,7 @@ const FooterSection = () => {
                 <li className='flex flex-col'>
                   <span className='text-sm'>задать вопрос:</span>
                   <a
-                    className='font-medium'
+                    className='font-medium  whitespace-nowrap'
                     href={`mailto:${process.env.NEXT_PUBLIC_EMAIL2}`}
                   >
                     {process.env.NEXT_PUBLIC_EMAIL2}

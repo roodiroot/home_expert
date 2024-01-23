@@ -21,6 +21,10 @@ const disignValue = [
   { name: "Надо", value: "20000" },
   { name: "Уже есть", value: "0" },
 ];
+const typeProces = [
+  { name: "Капитальный", value: "1" },
+  { name: "Косметический", value: "0.25" },
+];
 // const floorValues = [
 //   { name: "Без покрытия", value: "0" },
 //   { name: "Плитка", value: "450" },
@@ -37,6 +41,7 @@ interface CounterFormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const [square, setSquare] = useState(defaultValue);
   const [type, setType] = useState("0");
+  const [typeProc, setTypeProc] = useState("0");
   const [disign, setDisign] = useState("0");
 
   const [summ, setSumm] = useState(0);
@@ -50,7 +55,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
 
   const onSubmit: SubmitHandler<CounterForm> = async (data) => {
     setDisabled(true);
-    await sendMessage({ ...data, square, type, disign, summ })
+    await sendMessage({ ...data, square, type, typeProc, disign, summ })
       .then((d) => {
         if (d) {
           reset();
@@ -63,8 +68,8 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 
   useEffect(() => {
-    setSumm(square * Number(type) + Number(disign));
-  }, [square, type, disign]);
+    setSumm(square * +type * +typeProc + +disign);
+  }, [square, type, disign, typeProc]);
 
   return (
     <form className={className} action='' onClick={(e) => e.preventDefault()}>
@@ -84,7 +89,14 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           values={typeValue}
         />
         <SelectInput
-          title='3. Разработка дизайн проекта'
+          title='3. Тип ремонта'
+          label='Типы ремонта'
+          setValue={setTypeProc}
+          placeholder='Выберите тип'
+          values={typeProces}
+        />
+        <SelectInput
+          title='4. Разработка дизайн проекта'
           setValue={setDisign}
           placeholder='Выберите нужное'
           values={disignValue}
