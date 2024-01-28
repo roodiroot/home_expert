@@ -35,7 +35,7 @@ const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
           </div>
         </div>
         <div className='mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32'>
-          <div className='relative pb-12 max-w-3xl flex-none sm:max-w-5xl xl:max-w-none'>
+          <div className='relative pb-16 max-w-3xl flex-none sm:max-w-5xl xl:max-w-none'>
             <div className='-m-2  rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl xl:p-4'>
               <Image
                 className='h-auto max-w-full w-[76rem] rounded-md right-1 ring-gray-900/10'
@@ -46,7 +46,7 @@ const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
               />
             </div>
             <span className='absolute text-gray-500 max-w-xs text-sm bottom-0'>
-              Ремонт "под ключ". Поселок Соловьиная роща
+              Создание уютного современного проекта на ул. Городская, Москва
             </span>
           </div>
         </div>

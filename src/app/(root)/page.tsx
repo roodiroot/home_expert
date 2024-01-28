@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <main className='font-medium'>
-        <HeroBlock img='/image/cta_1222.jpg' Logo={Logo} pattern={pattern} />
+        <HeroBlock img='/image/mi.jpg' Logo={Logo} pattern={pattern} />
         <CTASection img='/image/main2.jpg' />
         <PortfolioListSection list={portfolioList} />
         <FeatureSection img='/image/func2.jpg' list={consultationBlocks} />
