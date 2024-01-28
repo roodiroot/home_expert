@@ -37,7 +37,7 @@ export const FeatureSection: React.FC<{ img: string; list: any[] }> = ({
               </div>
             </div>
           </div>
-          <div className='flex items-start justify-end lg:order-first'>
+          <div className='relative pb-16 flex items-start justify-end lg:order-first'>
             <Image
               src={img}
               width={912}
@@ -45,6 +45,9 @@ export const FeatureSection: React.FC<{ img: string; list: any[] }> = ({
               className='w-[48rem] max-w-none rounded-xl ring-1 ring-gray-400/10 sm:w-[57rem]'
               alt='screen'
             />
+            <span className='absolute text-gray-500 text-right max-w-xs text-sm bottom-4 right-4'>
+              Создание уютного современного проекта на ул. Городская, Москва
+            </span>
           </div>
         </div>
       </div>

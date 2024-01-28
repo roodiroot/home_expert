@@ -1,8 +1,15 @@
+import { Metadata } from "next";
 import Image from "next/image";
 
 import CounterForm from "@/components/counter-page-components/counter-form";
 import { DescriptionElement, TitleElement } from "@/components/ui/h2-element";
 import Logo from "@/components/ui/logo";
+
+export const metadata: Metadata = {
+  title: "Расчет стоимости ремонта",
+  description:
+    "Узнайте сколько будет стоить сделать ремонт в вашем доме | Создание дизайн проекта | ",
+};
 
 export default function Counter() {
   return (

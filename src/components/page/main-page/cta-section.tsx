@@ -14,7 +14,7 @@ interface CTASectionProps {
 const CTASection: React.FC<CTASectionProps> = ({ img }) => {
   return (
     <div className='relative'>
-      <div className='relative h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2'>
+      <div className='relative pb-16 h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2'>
         <Image
           className='h-full w-full object-cover'
           src={img}
@@ -22,6 +22,9 @@ const CTASection: React.FC<CTASectionProps> = ({ img }) => {
           height={1080}
           alt='scrin cta block'
         />
+        <span className='absolute text-gray-500 text-right max-w-xs text-sm bottom-4 right-4'>
+          Дизайн и ремонт дома на ул. Ломоносова, Москва
+        </span>
       </div>
       <div className='relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40'>
         <div className='ml-6 mr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0'>

@@ -109,8 +109,8 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           values={floorValues}
         /> */}
         <TotalSumm
-          title='Стоимость ремонта'
-          description='Стоимость является приблизительной.'
+          title='Стоимость ремонта*'
+          description='*Стоимость ремонта является приблизительной и не может являться публичной офертой. Для точного расчета оставьте заявку ниже.'
           value={summ}
         />
         <InfoInput

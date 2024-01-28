@@ -44,7 +44,7 @@ const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
           className={cn(
             "w-full min-w-0 flex-auto rounded-md border px-3.5 py-2 text-gray-900 border-gray-300 placeholder:text-gray-400 placeholder:font-light shadow-sm  text-sm sm:leading-6 focus:outline-accent-600",
             ariaInvalid &&
-              "ring-rose-600 placeholder:text-rose-600 focus:outline-rose-600"
+              "ring-rose-600 placeholder:text-rose-600 focus:outline-rose-600 border-rose-300"
           )}
         />
       </div>

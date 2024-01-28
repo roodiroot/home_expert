@@ -10,7 +10,7 @@ export interface PortfolioListType {
 }
 export const portfolioList = [
   {
-    img: "/image/portfolio/p1.jpg",
+    img: "/image/portfolio/p12.jpg",
     title: "Современный Городской Лофт. Ванна в одной из новостроек.",
     description:
       "Преобразование 2-комнатной квартиры в стильное лофт-пространство.",
@@ -19,33 +19,33 @@ export const portfolioList = [
     author: {
       img: "/image/face/f2.jpg",
       name: "Семен Семенович",
-      work: "Квартира в новостройке",
+      work: "Владелец квартиры",
     },
   },
   {
-    img: "/image/portfolio/p2.jpg",
+    img: "/image/portfolio/p22.jpg",
     title: "Классическая Элегантность. Проект на улице Ломоносова.",
     description:
-      "Ремонт и дизайн квартиры в классическом стиле с использованием натуральных материалов.",
+      "Ремонт и дизайн частного дома, в классическом стиле с использованием натуральных материалов.",
     date: "Апрель 13, 2021",
     tags: ["Кухня", "Гостиная"],
     author: {
       img: "/image/face/f3.jpg",
       name: "Алексей Г",
-      work: "Хоязин квартиры",
+      work: "Хоязин дома",
     },
   },
   {
-    img: "/image/portfolio/p3.jpg",
+    img: "/image/portfolio/p32.jpg",
     title: "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
     description:
       "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
     date: "Ноябрь 2, 2023",
-    tags: ["Зала", "Спальня"],
+    tags: ["Зала", "Спальня", "Ванная"],
     author: {
       img: "/image/face/f1.jpg",
       name: "Федор Д",
-      work: "Диретор заведения",
+      work: "Хозяин квартиры",
     },
   },
 ];

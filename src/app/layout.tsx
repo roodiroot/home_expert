@@ -4,7 +4,7 @@ import { beautifulFont } from "./font";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.ru"),
+  metadataBase: new URL("https://home-expert.su"),
   title: {
     template: "%s | Отделка квартир в Москве и Московской области",
     default: "Отделка квартир в Москве и Московской области", // a default is required when creating a template
