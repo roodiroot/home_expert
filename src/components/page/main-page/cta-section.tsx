@@ -22,7 +22,7 @@ const CTASection: React.FC<CTASectionProps> = ({ img }) => {
           height={1080}
           alt='scrin cta block'
         />
-        <span className='absolute text-gray-500 text-right max-w-xs text-sm bottom-4 right-4'>
+        <span className='absolute text-xs text-gray-500 text-right max-w-xs bottom-8 right-4'>
           Дизайн и ремонт дома на ул. Ломоносова, Москва
         </span>
       </div>

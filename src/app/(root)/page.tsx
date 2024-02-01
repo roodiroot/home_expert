@@ -3,18 +3,18 @@ import CTASection from "@/components/page/main-page/cta-section";
 import { FaqSection } from "@/components/page/main-page/faq-section";
 import { FeatureSection } from "@/components/page/main-page/feature-section";
 import HeroBlock from "@/components/page/main-page/hero-block";
-import { PortfolioListSection } from "@/components/page/main-page/portfolio-list-section";
+import PortfolioListSection from "@/components/page/main-page/portfolio-list-section";
 import SendMessageSection from "@/components/page/main-page/send-message-section";
 import { InfoSectionTwo } from "@/components/ui/info-block-venus";
 import Logo from "@/components/ui/logo";
 import { TestemonialsKuiperBeltBlock } from "@/components/ui/testimonials-kuiper-belt";
 import {
-  portfolioList,
   consultationBlocks,
   qualityList,
   FAQList,
   testimonialsList,
 } from "@/utils/constance";
+import portfolioList from "@/utils/projects.json";
 
 const pattern = (
   <svg
@@ -46,10 +46,17 @@ export default function Home() {
   return (
     <>
       <main className='font-medium'>
-        <HeroBlock img='/image/mi.jpg' Logo={Logo} pattern={pattern} />
-        <CTASection img='/image/main2.jpg' />
-        <PortfolioListSection list={portfolioList} />
-        <FeatureSection img='/image/func2.jpg' list={consultationBlocks} />
+        <HeroBlock
+          img='/image/portfolio/p10/1.jpg'
+          Logo={Logo}
+          pattern={pattern}
+        />
+        <CTASection img='/image/portfolio/p10/3.jpg' />
+        <PortfolioListSection list={portfolioList.slice(0, 3)} />
+        <FeatureSection
+          img='/image/portfolio/p10/6.jpg'
+          list={consultationBlocks}
+        />
         <SendMessageSection />
         <InfoSectionTwo
           pattern={pattern}

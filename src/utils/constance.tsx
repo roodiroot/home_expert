@@ -1,54 +1,16 @@
 import IconCombain from "./icon-combain";
 
 export interface PortfolioListType {
-  img: string;
-  title: string;
+  img: string[];
+  title?: string;
+  shortTitle?: string;
+  time?: string;
   description: string;
   date: string;
-  tags: string[];
-  author: { img: string; name: string; work: string };
+  tags?: string[];
+  author?: { img: string; name: string; work: string };
 }
-export const portfolioList = [
-  {
-    img: "/image/portfolio/p12.jpg",
-    title: "Современный Городской Лофт. Ванна в одной из новостроек.",
-    description:
-      "Преобразование 2-комнатной квартиры в стильное лофт-пространство.",
-    date: "Март 16, 2022",
-    tags: ["Ванная", "Душ"],
-    author: {
-      img: "/image/face/f2.jpg",
-      name: "Семен Семенович",
-      work: "Владелец квартиры",
-    },
-  },
-  {
-    img: "/image/portfolio/p22.jpg",
-    title: "Классическая Элегантность. Проект на улице Ломоносова.",
-    description:
-      "Ремонт и дизайн частного дома, в классическом стиле с использованием натуральных материалов.",
-    date: "Апрель 13, 2021",
-    tags: ["Кухня", "Гостиная"],
-    author: {
-      img: "/image/face/f3.jpg",
-      name: "Алексей Г",
-      work: "Хоязин дома",
-    },
-  },
-  {
-    img: "/image/portfolio/p32.jpg",
-    title: "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
-    description:
-      "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
-    date: "Ноябрь 2, 2023",
-    tags: ["Зала", "Спальня", "Ванная"],
-    author: {
-      img: "/image/face/f1.jpg",
-      name: "Федор Д",
-      work: "Хозяин квартиры",
-    },
-  },
-];
+
 export const consultationBlocks = [
   {
     title: "Индивидуальный подход.",

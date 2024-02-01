@@ -1,0 +1,222 @@
+[
+  {
+    "img": [
+      "/image/portfolio/p5/1.jpg",
+      "/image/portfolio/p5/2.jpg",
+      "/image/portfolio/p5/3.jpg",
+      "/image/portfolio/p5/4.jpg",
+      "/image/portfolio/p5/5.jpg"
+    ],
+    "title": "Современный Городской Лофт. Ванна в одной из новостроек.",
+    "shortTitle": "Ремонт квартиры в новостройке",
+    "time": "2 месяца",
+    "description": "Преобразование 2-комнатной квартиры в стильное лофт-пространство.",
+    "date": "Март 16, 2022",
+    "tags": ["Ванная", "Душ"],
+    "author": {
+      "img": "/image/face/f2.jpg",
+      "name": "Семен Семенович",
+      "work": "Владелец квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p10/1.jpg",
+      "/image/portfolio/p10/2.jpg",
+      "/image/portfolio/p10/3.jpg",
+      "/image/portfolio/p10/4.jpg",
+      "/image/portfolio/p10/5.jpg",
+      "/image/portfolio/p10/6.jpg",
+      "/image/portfolio/p10/7.jpg"
+    ],
+    "title": "Классическая Элегантность. Проект на улице Ломоносова.",
+    "shortTitle": "Частный сектор. Ремонт под ключ",
+    "time": "3 месяца",
+    "description": "Ремонт и дизайн частного дома, в классическом стиле с использованием натуральных материалов.",
+    "date": "Апрель 13, 2021",
+    "tags": ["Кухня", "Гостиная"],
+    "author": {
+      "img": "/image/face/f3.jpg",
+      "name": "Алексей Г",
+      "work": "Хоязин дома"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p11/1.jpg",
+      "/image/portfolio/p11/2.jpg",
+      "/image/portfolio/p11/3.jpg",
+      "/image/portfolio/p11/4.jpg",
+      "/image/portfolio/p11/5.jpg",
+      "/image/portfolio/p11/6.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p1/1.jpg",
+      "/image/portfolio/p1/2.jpg",
+      "/image/portfolio/p1/3.jpg",
+      "/image/portfolio/p1/4.jpg",
+      "/image/portfolio/p1/5.jpg",
+      "/image/portfolio/p1/6.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p2/1.jpg",
+      "/image/portfolio/p2/2.jpg",
+      "/image/portfolio/p2/3.jpg",
+      "/image/portfolio/p2/4.jpg",
+      "/image/portfolio/p2/5.jpg",
+      "/image/portfolio/p2/6.jpg",
+      "/image/portfolio/p2/7.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p3/1.jpg",
+      "/image/portfolio/p3/2.jpg",
+      "/image/portfolio/p3/3.jpg",
+      "/image/portfolio/p3/4.jpg",
+      "/image/portfolio/p3/5.jpg",
+      "/image/portfolio/p3/6.jpg",
+      "/image/portfolio/p3/7.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p4/1.jpg",
+      "/image/portfolio/p4/2.jpg",
+      "/image/portfolio/p4/3.jpg",
+      "/image/portfolio/p4/4.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": ["/image/portfolio/p6/1.jpg", "/image/portfolio/p6/2.jpg"],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p7/1.jpg",
+      "/image/portfolio/p7/2.jpg",
+      "/image/portfolio/p7/3.jpg",
+      "/image/portfolio/p7/4.jpg",
+      "/image/portfolio/p7/5.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p8/1.jpg",
+      "/image/portfolio/p8/2.jpg",
+      "/image/portfolio/p8/3.jpg",
+      "/image/portfolio/p8/4.jpg",
+      "/image/portfolio/p8/5.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Ремонт квартиры в Хамовниках",
+    "time": "3 месяца",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  },
+  {
+    "img": [
+      "/image/portfolio/p9/1.jpg",
+      "/image/portfolio/p9/2.jpg",
+      "/image/portfolio/p9/3.jpg",
+      "/image/portfolio/p9/4.jpg"
+    ],
+    "title": "Скандинавский Уют. Создание дизайна и внутренняя отделка.",
+    "shortTitle": "Профессиональная разводка",
+    "time": "1 неделя",
+    "description": "Ремонт квартиры в светлых тонах с элементами скандинавского дизайна.",
+    "date": "Ноябрь 2, 2023",
+    "tags": ["Зала", "Спальня", "Ванная"],
+    "author": {
+      "img": "/image/face/f1.jpg",
+      "name": "Федор Д",
+      "work": "Хозяин квартиры"
+    }
+  }
+]

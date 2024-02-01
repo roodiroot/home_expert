@@ -46,7 +46,7 @@ const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
               />
             </div>
             <span className='absolute text-gray-500 max-w-xs text-sm bottom-0'>
-              Создание уютного современного проекта на ул. Городская, Москва
+              Дизайн и ремонт дома на ул. Ломоносова, Москва
             </span>
           </div>
         </div>

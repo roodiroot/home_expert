@@ -12,3 +12,7 @@ body {
   color: #111827;
   background: rgb(var(--background-end-rgb));
 }
+
+/* .styles-module_wrapper__1I_qj {
+  @apply bg-black/80;
+} */
