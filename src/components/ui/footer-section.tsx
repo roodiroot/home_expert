@@ -1,5 +1,6 @@
 import Logo from "@/components/ui/logo";
 import IconCombain from "@/utils/icon-combain";
+import Link from "next/link";
 
 const FooterSection = () => {
   return (
@@ -86,7 +87,10 @@ const FooterSection = () => {
       </div>
       <div className='mt-16 border-t  pt-8 sm:mt-20 lg:mt-24'>
         <p className='text-xs leading-5 text-gray-600'>
-          © 2023 ДомЭксперт, Все права защищены.
+          © 2023 ДомЭксперт,{" "}
+          <Link href={"/doc/privacy-policy"} className='underline'>
+            Политика конфиденциальности
+          </Link>
         </p>
       </div>
     </div>

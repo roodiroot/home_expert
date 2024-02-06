@@ -58,7 +58,12 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
     await sendMessage({ ...data, square, type, typeProc, disign, summ })
       .then((d) => {
         if (d) {
-          reset();
+          //@ts-ignore
+          ym(96375985, "reachGoal", "calculation");
+          reset({
+            name: "",
+            phone: "",
+          });
           setDisabled(false);
         }
       })

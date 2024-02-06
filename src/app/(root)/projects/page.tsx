@@ -1,7 +1,15 @@
+import { Metadata } from "next";
+
 import ProjectAction from "@/components/page/projects-page/project-action";
 import ProjectsHeader from "@/components/page/projects-page/projects-header";
 import ProjectsList from "@/components/page/projects-page/projects-list";
 import projectList from "@/utils/projects.json";
+
+export const metadata: Metadata = {
+  title: "Выполненный работы",
+  description:
+    "Ремонты в Москве, которые мы уже выполнили. Фотографии наших работ. Эксперты в мире ремонта и отделки.",
+};
 
 const Projects: React.FC = () => {
   return (

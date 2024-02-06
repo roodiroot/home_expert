@@ -28,7 +28,14 @@ const ContactForm = () => {
     await sendMessage(data)
       .then((d) => {
         if (d) {
-          reset();
+          //@ts-ignore
+          ym(96375985, "reachGoal", "feedback");
+          reset({
+            name: "",
+            phone: "",
+            email: "",
+            message: "",
+          });
           setDisabled(false);
         }
       })

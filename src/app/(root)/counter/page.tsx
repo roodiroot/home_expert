@@ -8,7 +8,7 @@ import Logo from "@/components/ui/logo";
 export const metadata: Metadata = {
   title: "Расчет стоимости ремонта",
   description:
-    "Узнайте сколько будет стоить сделать ремонт в вашем доме | Создание дизайн проекта | ",
+    "Узнайте сколько будет стоить сделать ремонт в вашем доме, создание дизайн проекта",
 };
 
 export default function Counter() {

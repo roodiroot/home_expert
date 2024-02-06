@@ -8,6 +8,7 @@ import { Button } from "../ui/elements-button";
 import { InputElement } from "../ui/input-element";
 import { sendMessage } from "@/lib/send-message";
 import useModal from "@/hooks/useModal";
+import PolicyText from "../ui/policy-text";
 
 type InputsModalForm = {
   name: string;
@@ -28,7 +29,12 @@ const ModalSendOrder = () => {
     await sendMessage(data)
       .then((d) => {
         if (d) {
-          reset();
+          //@ts-ignore
+          ym(96375985, "reachGoal", "submit");
+          reset({
+            name: "",
+            phone: "",
+          });
           onClose();
           setDisabled(false);
         }
@@ -118,22 +124,25 @@ const ModalSendOrder = () => {
                     </div>
                   </div>
                 </div>
-                <div className='bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6'>
+                <div className='bg-gray-50 px-4 py-3 flex flex-col sm:flex-row-reverse sm:px-6 gap-3'>
                   <Button
                     disabled={disabled}
                     onClick={handleSubmit(onSubmit)}
-                    className='w-full sm:ml-3 sm:w-auto'
+                    className='w-full '
                   >
                     Отправить
                   </Button>
                   <button
                     type='button'
-                    className='mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto'
+                    className='inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
                     onClick={() => onClose()}
                     ref={cancelButtonRef}
                   >
                     Отмена
                   </button>
+                </div>
+                <div className='bg-gray-50 px-4 pb-3 sm:flex sm:flex-row-reverse sm:px-6'>
+                  <PolicyText onClick={() => onClose()} className='mt-0' />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

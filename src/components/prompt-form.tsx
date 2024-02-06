@@ -26,7 +26,12 @@ const PromptForm = () => {
     await sendMessage(data)
       .then((d) => {
         if (d) {
-          reset();
+          //@ts-ignore
+          ym(96375985, "reachGoal", "submit");
+          reset({
+            name: "",
+            phone: "",
+          });
           setDisabled(false);
         }
       })
