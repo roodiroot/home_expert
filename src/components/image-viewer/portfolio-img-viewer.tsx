@@ -81,16 +81,14 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
         )}
       </div>
       {isViewerOpen && (
-        <div className='relative z-50'>
-          <ImageViewer
-            src={imgList}
-            currentIndex={current}
-            disableScroll={false}
-            closeOnClickOutside={true}
-            backgroundStyle={{ background: "#000000e0", zIndex: 50 }}
-            onClose={closeImageViewer}
-          />
-        </div>
+        <ImageViewer
+          src={imgList}
+          currentIndex={current}
+          disableScroll={true}
+          closeOnClickOutside={true}
+          backgroundStyle={{ background: "#000000e0", zIndex: 50 }}
+          onClose={closeImageViewer}
+        />
       )}
     </>
   );
