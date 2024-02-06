@@ -87,7 +87,7 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
             currentIndex={current}
             disableScroll={false}
             closeOnClickOutside={true}
-            backgroundStyle={{ background: "#000000e0" }}
+            backgroundStyle={{ background: "#000000e0", zIndex: 50 }}
             onClose={closeImageViewer}
           />
         </div>
