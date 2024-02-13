@@ -8,7 +8,7 @@ export const ActionComponentsBatton = () => {
   const { onOpen } = useModal();
   return (
     <div className='mt-10 flex items-center sm:gap-x-6'>
-      <Button onClick={onOpen}>Заказать ремонт</Button>
+      <Button onClick={onOpen}>Консультация</Button>
       <LinkButton href={`tel:${process.env.NEXT_PUBLIC_PHONE1}`}>
         {process.env.NEXT_PUBLIC_PHONE1p}
       </LinkButton>

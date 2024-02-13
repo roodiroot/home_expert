@@ -23,13 +23,11 @@ const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
           <div className='mt-24 sm:mt-32 lg:mt-16'>
             <ActionComponents />
             <h1 className='mt-10 text-4xl font-bold tracking-tight sm:text-6xl text-balance'>
-              Комплексный ремонт "Под ключ"
+              Комплексный ремонт с&nbsp;выгодой до&nbsp;35%
             </h1>
             <p className='mt-6 text-lg leading-8 text-gray-600 text-balance'>
-              Мы&nbsp;специализируется на&nbsp;ремонте и&nbsp;внутренней отделке
-              квартир.Основные направления&nbsp;&mdash; комплексный ремонт
-              &laquo;под ключ&raquo; и&nbsp;индивидуальное проектирование
-              интерьеров.
+              Готовы к&nbsp;переменам? Закажите бесплатную консультацию сейчас
+              и&nbsp;узнайте как мы&nbsp;можем реализовать ваш идеальный ремонт.
             </p>
             <ActionComponentsBatton />
           </div>
