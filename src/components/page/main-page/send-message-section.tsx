@@ -3,12 +3,12 @@ import PromptForm from "@/components/prompt-form";
 
 const SendMessageSection = () => {
   return (
-    <div className='bg-white py-16 sm:py-24 lg:py-32'>
+    <div className='bg-accent-600 py-16 sm:py-24 lg:py-32'>
       <div className='mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8'>
         <div className='max-w-xl lg:col-span-6'>
-          <TitleElement text='Отправьте ваш номер' />
+          <TitleElement text='Отправьте ваш номер' className='text-white' />
           <DescriptionElement
-            className='mt-4'
+            className='mt-4 text-white/80'
             text='Наши специалисты перезвонят в течении 5ти минут и уточнят более удобное время для связи с вами. Далее вы обсудите все важные нюансы работы'
           />
         </div>

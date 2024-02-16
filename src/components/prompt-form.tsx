@@ -48,6 +48,7 @@ const PromptForm = () => {
     >
       <div className='flex gap-4 flex-col items-start sm:flex-row sm:items-end'>
         <InputElement
+          variant='dark'
           id='name'
           labelOn
           placeholder='Введите имя'
@@ -56,6 +57,7 @@ const PromptForm = () => {
           ariaInvalid={errors.name ? true : false}
         />
         <InputElement
+          variant='dark'
           labelOn
           placeholder='Введите телефон'
           id='phone'
@@ -64,11 +66,15 @@ const PromptForm = () => {
           {...register("phone", { pattern: regExp, required: true })}
           ariaInvalid={errors.phone ? true : false}
         />
-        <Button disabled={disabled} onClick={handleSubmit(onSubmit)}>
+        <Button
+          className='bg-white hover-bg-white/90 text-gray-900'
+          disabled={disabled}
+          onClick={handleSubmit(onSubmit)}
+        >
           Отправить
         </Button>
       </div>
-      <PolicyText />
+      <PolicyText variant='dark' />
     </form>
   );
 };

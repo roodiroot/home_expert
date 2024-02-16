@@ -7,6 +7,7 @@ interface InputElementProps
   label: string;
   labelOn?: boolean;
   ariaInvalid?: boolean;
+  variant?: "light" | "dark";
 }
 
 const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
@@ -19,6 +20,7 @@ const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
       id,
       placeholder,
       ariaInvalid,
+      variant,
       ...props
     },
     ref
@@ -27,11 +29,12 @@ const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
       <div className={cn("w-full", className)}>
         <label
           htmlFor={id}
-          className={`${
+          className={cn(
             labelOn
               ? "block text-start text-sm font-semibold leading mb-2.5"
-              : "sr-only"
-          }`}
+              : "sr-only",
+            variant === "dark" ? "text-white/90" : "text-gray-900"
+          )}
         >
           {label}
         </label>

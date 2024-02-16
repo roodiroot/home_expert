@@ -81,7 +81,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
       <div className='grid grid-cols-1 gap-x-8 gap-y-6'>
         <RangeInput
           title='1. Общая площадь квартиры в квадратных метрах'
-          description='Укажите площадь квартиры от 45 до 250 м²'
+          description='Укажите площадь квартиры от 10 до 200 м²'
           value={square}
           setValue={setSquare}
           defaultValue={defaultValue}
@@ -113,11 +113,11 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           placeholder='Выберите нужное'
           values={floorValues}
         /> */}
-        <TotalSumm
+        {/* <TotalSumm
           title='Стоимость ремонта*'
           description='*Стоимость ремонта является приблизительной и не может являться публичной офертой. Для точного расчета оставьте заявку ниже.'
           value={summ}
-        />
+        /> */}
         <InfoInput
           id='name'
           title='Введите ваше имя'
