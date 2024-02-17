@@ -10,7 +10,7 @@ export const ActionComponents = () => {
   return (
     <div className='inline-flex space-x-3'>
       <ButtonChip onClick={() => router.push(COUNTER_PAGE)}>
-        <span>Расчитать</span>{" "}
+        <span>Рассчитать</span>{" "}
         <span className='hidden sm:inline-block'>стоимость</span>
       </ButtonChip>
       <ButtonChip no_bg onClick={() => router.push(PROJECTS_PAGE)}>
