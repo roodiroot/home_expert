@@ -2,7 +2,7 @@ export const FaqSection: React.FC<{ faqList: any[] }> = ({ faqList }) => {
   return (
     <div className='mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40'>
       <h2 className='text-2xl font-bold leading-10 tracking-tight text-balance'>
-        Частые вопросы которые задают наши клиенты
+        Частые вопросы, которые задают наши клиенты
       </h2>
       <div className='mt-10 space-y-8'>
         {faqList?.map((i) => (

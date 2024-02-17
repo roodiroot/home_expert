@@ -11,7 +11,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ pattern }) => {
       <div className='mx-auto max-w-2xl text-center'>
         <TitleElement text='Еще остались вопросы?' />
         <DescriptionElement
-          text='Заполните форму обратной связи, и ожидайте звонка наших специалистов. Они свяжутсяс вами в течении 10ти миут.'
+          text='Заполните форму обратной связи, и ожидайте звонка наших специалистов. Они свяжутсяс вами в течении 10 минут.'
           className='mt-2 text-lg leading-8'
         />
         <ContactForm />

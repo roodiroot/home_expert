@@ -18,12 +18,12 @@ export const consultationBlocks = [
     Icon: <IconCombain variant='user' color='#4f46e5' />,
   },
   {
-    title: "Оценка Бюджета.",
+    title: "Оценка бюджета.",
     text: "Понимание потенциальных затрат и оптимальных путей реализации проекта, что поможет вам планировать ремонт без неожиданных расходов.",
     Icon: <IconCombain variant='card' color='#4f46e5' />,
   },
   {
-    title: "Профессиональные Советы.",
+    title: "Профессиональные советы.",
     text: "Используйте экспертные знания для выбора лучших материалов и решений, которые сделают ваш ремонт уникальным и функциональным.",
     Icon: <IconCombain variant='message' size={24} color='#4f46e5' />,
   },
@@ -42,7 +42,7 @@ export const qualityList = [
     Icon: <IconCombain variant='ok' size={24} color='#fff' />,
   },
   {
-    name: "Детальная Проверка",
+    name: "Детальная проверка",
     description:
       "Тщательный осмотр качества отделочных работ, включая покраску, обои, плитку, полы и потолки.",
     Icon: <IconCombain variant='ok' size={24} color='#fff' />,
