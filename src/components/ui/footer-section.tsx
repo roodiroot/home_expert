@@ -90,7 +90,7 @@ const FooterSection = () => {
       </div>
       <div className='mt-16 border-t  pt-8 sm:mt-20 lg:mt-24'>
         <p className='text-xs leading-5 text-gray-600'>
-          © 2023 ДомЭксперт,{" "}
+          © 2023 - 2024 ДомЭксперт,{" "}
           <Link href={"/doc/privacy-policy"} className='underline'>
             Политика конфиденциальности
           </Link>

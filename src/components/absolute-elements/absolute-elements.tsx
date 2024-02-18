@@ -1,3 +1,4 @@
+import BeforeUnloadComponent from "./befor-unload-popup/before-unload";
 import ModalSendOrder from "./modal-send-order";
 import Notifications from "./notifications";
 
@@ -6,6 +7,7 @@ const AbsoluteElements = () => {
     <div>
       <Notifications />
       <ModalSendOrder />
+      <BeforeUnloadComponent />
     </div>
   );
 };

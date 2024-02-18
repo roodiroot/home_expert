@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Cormorant_SC } from "next/font/google";
 
 export const beautifulFont = localFont({
   src: [
@@ -23,4 +24,10 @@ export const beautifulFont = localFont({
       style: "normal",
     },
   ],
+});
+
+export const cormorant = Cormorant_SC({
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal"],
+  subsets: ["cyrillic"],
 });
