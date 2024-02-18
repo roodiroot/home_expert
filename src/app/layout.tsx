@@ -8,7 +8,7 @@ import { Metrika } from "@/components/metrika";
 export const metadata: Metadata = {
   metadataBase: new URL("https://home-expert.su"),
   title: {
-    template: "%s | Ремонт квартир в Москве и Московской области",
+    template: "%s | ДомЭксперт - ремонт квартир в Москве",
     default: "Отделка квартир в Москве и Московской области",
   },
   description:
