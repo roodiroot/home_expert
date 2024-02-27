@@ -7,7 +7,7 @@ const AbsoluteElements = () => {
     <div>
       <Notifications />
       <ModalSendOrder />
-      <BeforeUnloadComponent />
+      {/* <BeforeUnloadComponent /> */}
     </div>
   );
 };
