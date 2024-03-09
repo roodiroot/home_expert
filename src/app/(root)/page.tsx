@@ -1,10 +1,12 @@
 import BunnerKondish from "@/components/bunners/bunner-kondish";
+import BenefitsSection from "@/components/page/main-page/benefits-section";
 import ContactSection from "@/components/page/main-page/contact-section";
 import CTASection from "@/components/page/main-page/cta-section";
 import { FaqSection } from "@/components/page/main-page/faq-section";
 import { FeatureSection } from "@/components/page/main-page/feature-section";
 import HeroBlock from "@/components/page/main-page/hero-block";
 import PortfolioListSection from "@/components/page/main-page/portfolio-list-section";
+import PriceSection from "@/components/page/main-page/price-section";
 import SendMessageSection from "@/components/page/main-page/send-message-section";
 import { InfoSectionTwo } from "@/components/ui/info-block-venus";
 import Logo from "@/components/ui/logo";
@@ -52,13 +54,15 @@ export default function Home() {
           Logo={Logo}
           pattern={pattern}
         />
+        <BenefitsSection />
         <CTASection img="/image/portfolio/p10/3.jpg" />
-        <PortfolioListSection list={portfolioList.slice(0, 3)} />
         <FeatureSection
           img="/image/portfolio/p10/6.jpg"
           list={consultationBlocks}
         />
+        <PriceSection />
         <SendMessageSection />
+        <PortfolioListSection list={portfolioList.slice(0, 3)} />
         <InfoSectionTwo
           pattern={pattern}
           subtitle="Проверка качества"
