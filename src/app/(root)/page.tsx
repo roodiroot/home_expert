@@ -49,11 +49,7 @@ export default function Home() {
   return (
     <>
       <main className="font-medium">
-        <HeroBlock
-          img="/image/portfolio/p10/1.jpg"
-          Logo={Logo}
-          pattern={pattern}
-        />
+        <HeroBlock img="/image/m2.jpg" Logo={Logo} pattern={pattern} />
         <BenefitsSection />
         <CTASection img="/image/portfolio/p10/3.jpg" />
         <FeatureSection
