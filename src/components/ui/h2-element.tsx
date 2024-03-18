@@ -24,7 +24,7 @@ export const DescriptionElement: React.FC<{
   text: string;
   className?: string;
 }> = ({ text, className }) => (
-  <div className={`leading-7 text-gray-600 text-balance ${className}`}>
+  <div className={`leading-7 text-white font-light text-balance ${className}`}>
     {text}
   </div>
 );
