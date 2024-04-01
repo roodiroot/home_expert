@@ -50,7 +50,7 @@ const ModalSendOrder = () => {
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-30"
+        className="relative z-[100]"
         initialFocus={cancelButtonRef}
         onClose={onClose}
       >
