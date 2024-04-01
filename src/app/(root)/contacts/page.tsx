@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const ContactsPage = () => {
-  return (
-    <div className="">
-      <ContactBlock />
-    </div>
-  );
+  return <ContactBlock />;
 };
 
 export default ContactsPage;

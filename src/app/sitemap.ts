@@ -5,6 +5,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://home-expert.su",
       lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: "https://home-expert.su/renovation",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: "https://home-expert.su/about",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 1,
+    },
+    {
+      url: "https://home-expert.su/contacts",
+      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },

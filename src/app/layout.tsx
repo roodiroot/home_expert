@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { beautifulFont } from "./font";
 
-import "./globals.css";
 import { Suspense } from "react";
 import { Metrika } from "@/components/metrika";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://home-expert.su"),
