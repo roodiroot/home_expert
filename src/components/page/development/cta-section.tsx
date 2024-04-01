@@ -19,15 +19,14 @@ const CTASection = () => {
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl px-6 py-16 flex-col gap-16 bg-gray-50 ring-1 ring-gray-200 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20">
             <div className="relative overflow-hidden h-96 w-full flex-none rounded-2xl shadow-xl lg:aspect-square lg:h-auto lg:w-96">
-              <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-cyan-500 to-blue-500  aspect-[1.5/1] animate-bg-change">
-                <Image
-                  width={384}
-                  height={384}
-                  alt="cta_image"
-                  className="w-full h-full object-cover"
-                  src="/image/renovation/types/cta.jpg"
-                />
-              </div>
+              <Image
+                width={500}
+                height={384}
+                alt="cta_image"
+                className="w-full h-full object-cover"
+                src="/image/renovation/types/cta.jpg"
+              />
+
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 to-gray-900/30"></div>
             </div>
             <div className="w-full flex-auto">

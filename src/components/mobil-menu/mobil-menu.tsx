@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import useMenu from "@/hooks/use-menu";
 import { publicRoutes } from "@/routes";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useDisableBodyScroll } from "@/hooks/use-disable-body-scroll";
+import { cn } from "@/lib/utils";
 
 interface MenuMobilProps extends React.HtmlHTMLAttributes<HTMLElement> {}
 
 const MenuMobil: React.FC<MenuMobilProps> = ({ className }) => {
+  const pathname = usePathname();
   const { isOpen, onClose } = useMenu();
   const router = useRouter();
 
@@ -29,7 +31,7 @@ const MenuMobil: React.FC<MenuMobilProps> = ({ className }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 bg-white "
+            className="fixed inset-0 z-40 bg-white "
           >
             <div className="mx-auto max-w-7xl h-full px-6 pt-36 pb-6 ">
               <nav>
@@ -38,9 +40,18 @@ const MenuMobil: React.FC<MenuMobilProps> = ({ className }) => {
                     <li
                       key={route.name}
                       onClick={() => handleClick(route.link)}
-                      className="cursor-pointer text-xl font-semibold text-gray-900"
+                      className="relative cursor-pointer text-xl font-semibold text-gray-900"
                     >
-                      {route.name}
+                      <span
+                        className={cn(
+                          "relative py-1 px-1",
+                          pathname === route.link &&
+                            "before:w-full before:h-0.5 before:bg-accent-600 before:absolute before:bottom-0 before:left-0"
+                        )}
+                      >
+                        {" "}
+                        {route.name}
+                      </span>
                     </li>
                   ))}
                 </ul>

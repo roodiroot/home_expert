@@ -49,23 +49,6 @@ const LinkNavbar: React.FC<LinkNavbarProps> = ({
         </div>
       </Link>
     </motion.li>
-    // <li
-    //   {...props}
-    //   className={cn(
-    //     "font-medium text-sm group hover:bg-white rounded-full transition",
-    //     className
-    //   )}
-    // >
-    //   <Link href={link} className="inline-block py-[13px] px-[26px]">
-    //     <div className="relative overflow-hidden">
-    //       <div className="absolute top-0 left-0 transition duration-300 flex flex-col group-hover:sm:-translate-y-5">
-    //         <RepeatSection>{name}</RepeatSection>
-    //         <RepeatSection>{name}</RepeatSection>
-    //       </div>
-    //       <RepeatSection className="invisible">{name}</RepeatSection>
-    //     </div>
-    //   </Link>
-    // </li>
   );
 };
 
