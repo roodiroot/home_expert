@@ -9,9 +9,9 @@ import { FAQListDew } from "@/utils/constance";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Выполненный работы",
+  title: "Загородное строительство",
   description:
-    "Ремонты в Москве, которые мы уже выполнили. Фотографии наших работ. Эксперты в мире ремонта и отделки.",
+    "Строим каркасные дома, дома из кирпича и газобетона. С индивидуальной и типовой архитектурой.",
 };
 
 export default function Home() {

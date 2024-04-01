@@ -1,8 +1,9 @@
 import ContactBlock from "@/components/page/contacts-page/contact-block";
 
 export const metadata = {
-  title: "Контакты",
-  description: "",
+  title: "Контактная информация",
+  description:
+    "Оставьте заявку на сайте, пишите в мессенджер, или просто позвоните по телефону, если планируете построить дом или сделать ремонт помещения.",
 };
 
 const ContactsPage = () => {

@@ -8,12 +8,12 @@ import { Metrika } from "@/components/metrika";
 export const metadata: Metadata = {
   metadataBase: new URL("https://home-expert.su"),
   title: {
-    template: "%s | ДомЭксперт - ремонт квартир в Москве",
-    default: "ДомЭксперт - отделка квартир в Москве и Московской области",
+    template: "%s | ДомЭксперт - строительство и ремонт.",
+    default: "ДомЭксперт - загородное строительство и ремонт помещений.",
   },
   description:
-    "Современный ремонт квартир с гарантией 5 лет. Ремонт домов под ключ в Москве и Московской области. Лучшие специалисты по ремонту квартир",
-  icons: "../asstets/img/logo_196.png",
+    "Современный ремонт и строительство домов. Строительство под ключ. Лучшие специалисты по ремонту квартир",
+  icons: "/logo_196.png",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='ru'>
+    <html lang="ru">
       <body className={beautifulFont.className}>
         {children}
         <Suspense>
