@@ -19,7 +19,7 @@ const ListElementTwo: React.FC<ListElementTwoProps> = ({
   return (
     <motion.div whileHover="hover" animate="rest" className="relative pl-16">
       <dt className="text-base font-semibold leading-7 text-gray-900">
-        <div className="absolute z-50  left-0 top-0 -translate-x-[19px] -translate-y-[12px] ">
+        <div className="absolute z-30  left-0 top-0 -translate-x-[19px] -translate-y-[12px] ">
           {Icon}
         </div>
         {name}
