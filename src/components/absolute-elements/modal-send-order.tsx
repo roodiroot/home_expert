@@ -2,13 +2,14 @@
 
 import { Fragment, useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+
 import { Dialog, Transition } from "@headlessui/react";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import { Button } from "../ui/elements-button";
-import { InputElement } from "../ui/input-element";
+import { Button } from "@/components/ui/elements-button";
+import { InputElement } from "@/components/ui/input-element";
 import { sendMessage } from "@/lib/send-message";
 import useModal from "@/hooks/useModal";
-import PolicyText from "../ui/policy-text";
+import PolicyText from "@/components/ui/policy-text";
 
 type InputsModalForm = {
   name: string;
@@ -48,73 +49,76 @@ const ModalSendOrder = () => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
-        as='div'
-        className='relative z-10'
+        as="div"
+        className="relative z-30"
         initialFocus={cancelButtonRef}
         onClose={onClose}
       >
         <Transition.Child
           as={Fragment}
-          enter='ease-out duration-300'
-          enterFrom='opacity-0'
-          enterTo='opacity-100'
-          leave='ease-in duration-200'
-          leaveFrom='opacity-100'
-          leaveTo='opacity-0'
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-          <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
-          <div className='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'>
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
-              enter='ease-out duration-300'
-              enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-              enterTo='opacity-100 translate-y-0 sm:scale-100'
-              leave='ease-in duration-200'
-              leaveFrom='opacity-100 translate-y-0 sm:scale-100'
-              leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg'>
-                <div className='bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4'>
-                  <div className='sm:flex sm:items-start'>
-                    <div className='mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:hidden'>
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                  <div className="sm:flex sm:items-start">
+                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:hidden">
                       <EnvelopeIcon
-                        className='h-6 w-6 text-green-600'
-                        aria-hidden='true'
+                        className="h-6 w-6 text-green-600"
+                        aria-hidden="true"
                       />
                     </div>
-                    <div className='mt-3 text-center sm:mt-0 sm:text-left'>
+                    <div className="mt-3 text-center sm:mt-0 sm:text-left">
                       <Dialog.Title
-                        as='h3'
-                        className='text-base font-semibold leading-6 text-gray-900'
+                        as="h3"
+                        className="text-base font-semibold leading-6 text-gray-900"
                       >
                         Отправка формы
                       </Dialog.Title>
-                      <div className='mt-2'>
-                        <p className='text-sm text-gray-500'>
-                          Благодарим Вас за выбор нашей компании! Наш специалист
-                          свяжется с Вами в ближайшие минуты, чтобы ответить на
-                          все Ваши вопросы.
+                      <div className="mt-2">
+                        <p className="text-sm text-gray-500">
+                          Благодарим Вас за выбор{" "}
+                          <span className="text-accent-600 font-medium">
+                            «ДомЭксперт»
+                          </span>
+                          ! Наш специалист свяжется с Вами в ближайшие минуты,
+                          чтобы ответить на все Ваши вопросы.
                         </p>
                       </div>
                       <InputElement
-                        id='name'
+                        id="name"
                         labelOn
-                        placeholder='Введите имя'
-                        label='Имя*'
-                        className='mt-4'
+                        placeholder="Введите имя"
+                        label="Имя*"
+                        className="mt-4"
                         {...register("name", { required: true })}
                         ariaInvalid={errors.name ? true : false}
                       />
                       <InputElement
                         labelOn
-                        placeholder='Введите телефон'
-                        id='phone'
-                        label='Телефон*'
-                        className='mt-4'
-                        inputMode='tel'
+                        placeholder="Введите телефон"
+                        id="phone"
+                        label="Телефон*"
+                        className="mt-4"
+                        inputMode="tel"
                         {...register("phone", {
                           pattern: regExp,
                           required: true,
@@ -124,25 +128,25 @@ const ModalSendOrder = () => {
                     </div>
                   </div>
                 </div>
-                <div className='bg-gray-50 px-4 py-3 flex flex-col sm:flex-row-reverse sm:px-6 gap-3'>
+                <div className="bg-gray-50 px-4 py-3 flex flex-col sm:flex-row-reverse sm:px-6 gap-3">
                   <Button
                     disabled={disabled}
                     onClick={handleSubmit(onSubmit)}
-                    className='w-full '
+                    className="w-full "
                   >
                     Отправить
                   </Button>
                   <button
-                    type='button'
-                    className='inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+                    type="button"
+                    className="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                     onClick={() => onClose()}
                     ref={cancelButtonRef}
                   >
                     Отмена
                   </button>
                 </div>
-                <div className='bg-gray-50 px-4 pb-3 sm:flex sm:flex-row-reverse sm:px-6'>
-                  <PolicyText onClick={() => onClose()} className='mt-0' />
+                <div className="bg-gray-50 px-4 pb-3 sm:flex sm:flex-row-reverse sm:px-6">
+                  <PolicyText onClick={() => onClose()} className="mt-0" />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

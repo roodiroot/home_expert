@@ -15,11 +15,11 @@ const ContainerWidger: React.FC<ContainerWidgetProps> = ({
     >
       <span
         className={cn(
-          "absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75",
+          "absolute inline-flex h-full w-full rounded-full bg-accent-600 opacity-75",
           !open && "animate-ping"
         )}
       ></span>
-      <span className="relative inline-flex rounded-full w-[75px] h-[75px] bg-sky-500">
+      <span className="relative inline-flex rounded-full w-[75px] h-[75px] bg-accent-600">
         <Icon
           variant="chat"
           className="absolute rotate-[12deg] fill-white top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10"

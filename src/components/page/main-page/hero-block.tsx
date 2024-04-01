@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { LogoProps } from "@/components/ui/logo";
 import {
   ActionComponents,
   // ActionComponentsBatton,
@@ -9,25 +8,24 @@ import { ActionComponentsBatton } from "@/components/hero-block-components/actio
 
 interface HeroBlockProps {
   img: string;
-  Logo: React.FC<LogoProps>;
   pattern?: React.ReactNode;
 }
 
-const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
+const HeroBlock: React.FC<HeroBlockProps> = ({ img, pattern }) => {
   return (
     <div className="relative w-full overflow-hidden">
       {pattern}
       <div className="mx-auto max-w-7xl px-6  pt-10 sm:pt-32 lg:flex lg:px-8 lg:pt-40">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:shrink-0 lg:pt-8">
-          <Logo size={197} className="h-11 " />
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <ActionComponents />
             <h1 className="mt-10 text-4xl font-bold tracking-tight sm:text-6xl text-balance">
-              Ремонт и&nbsp;отделка помещений в&nbsp;Москве и&nbsp;области
+              Превращаем Ваше пространство в мечту
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 text-balance">
-              Готовы к&nbsp;переменам? Закажите бесплатную консультацию сейчас
-              и&nbsp;узнайте как мы&nbsp;можем реализовать ваш идеальный ремонт.
+              Доверьте нам ремонт и отделку вашего помещения. Мы гарантируем
+              современный дизайн и безупречное качество, превращая ваш дом или
+              офис в уютное пространство.
             </p>
             <ActionComponentsBatton />
           </div>
@@ -38,6 +36,7 @@ const HeroBlock: React.FC<HeroBlockProps> = ({ img, Logo, pattern }) => {
               <Image
                 className="h-auto max-w-full w-[76rem] rounded-md right-1 ring-gray-900/10"
                 src={img}
+                priority
                 width={1216}
                 height={721}
                 alt="App screenshot"

@@ -3,16 +3,15 @@ import Logo from "@/components/ui/logo";
 
 export default function PrivacyPage() {
   return (
-    <div className='relative bg-white py-24 sm:py-32'>
-      <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <Logo className='h-14' />
-        <div className='mt-14'>
-          <H2Element text='Документы' />
+    <div className="relative bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mt-28">
+          <H2Element text="Документы" />
           <TitleElement
-            text='Политика по использованию персональных данных'
-            className='mt-2'
+            text="Политика по использованию персональных данных"
+            className="mt-2"
           />
-          <p className='mt-10'>
+          <p className="mt-10">
             Настоящая Политика конфиденциальности персональных данных (далее –
             Политика конфиденциальности) действует в отношении всей информации,
             которую сайт <strong>&quot;Дом Эксперт&quot;</strong>, (далее –
@@ -21,7 +20,7 @@ export default function PrivacyPage() {
             получить о Пользователе во время использования сайта home-expert.su
             (а также его субдоменов), его программ и его продуктов.
           </p>
-          <h2 className='mt-4 mb-2 font-bold text-lg'>
+          <h2 className="mt-4 mb-2 font-bold text-lg">
             1. Определение терминов
           </h2>
           <p>
@@ -30,7 +29,7 @@ export default function PrivacyPage() {
               термины:<strong></strong>
             </strong>
           </p>
-          <strong className='font-normal'>
+          <strong className="font-normal">
             <p>
               1.1.1. «<strong>Администрация сайта</strong>» (далее –
               Администрация) – уполномоченные сотрудники на управление сайтом{" "}
@@ -107,7 +106,7 @@ export default function PrivacyPage() {
               сайте и оплачивает через платёжные системы.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>2. Общие положения</h2>
+            <h2 className="mt-4 mb-2 font-bold text-lg">2. Общие положения</h2>
             <p>
               2.1. Использование сайта &quot;Дом Эксперт&quot; Пользователем
               означает согласие с настоящей Политикой конфиденциальности и
@@ -133,7 +132,7 @@ export default function PrivacyPage() {
               предоставляемых Пользователем.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               3. Предмет политики конфиденциальности
             </h2>
 
@@ -195,7 +194,7 @@ export default function PrivacyPage() {
               Политики конфиденциальности.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               4. Цели сбора персональной информации пользователя
             </h2>
 
@@ -239,7 +238,7 @@ export default function PrivacyPage() {
               Пользователя.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               5. Способы и сроки обработки персональной информации
             </h2>
 
@@ -284,7 +283,7 @@ export default function PrivacyPage() {
               данных Пользователя.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               6. Права и обязанности сторон
             </h2>
 
@@ -348,7 +347,7 @@ export default function PrivacyPage() {
               неправомерных действий.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               7. Ответственность сторон
             </h2>
             <p>
@@ -435,7 +434,7 @@ export default function PrivacyPage() {
               авторского права.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               8. Разрешение споров
             </h2>
 
@@ -464,7 +463,7 @@ export default function PrivacyPage() {
               законодательство Российской Федерации.
             </p>
 
-            <h2 className='mt-4 mb-2 font-bold text-lg'>
+            <h2 className="mt-4 mb-2 font-bold text-lg">
               9. Дополнительные условия
             </h2>
             <p>

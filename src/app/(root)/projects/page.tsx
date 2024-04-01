@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 import ProjectAction from "@/components/page/projects-page/project-action";
-import ProjectsHeader from "@/components/page/projects-page/projects-header";
 import ProjectsList from "@/components/page/projects-page/projects-list";
 import projectList from "@/utils/projects.json";
+import ButtonAction from "@/components/actions/button-action";
 
 export const metadata: Metadata = {
   title: "Выполненный работы",
@@ -14,20 +14,19 @@ export const metadata: Metadata = {
 const Projects: React.FC = () => {
   return (
     <>
-      <ProjectsHeader />
-      <div className='bg-white py-24 sm:py32'>
-        <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-          <div className='mx-auto max-w-2xl lg:mx-0'>
-            <h2 className='text-3xl font-bold tracking-tight sm:text-4xl'>
+      <div className="bg-white pb-24 pt-64 sm:py32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Наши реализованные проекты
             </h2>
-            <p className='mt-6 text-lg leading-8 text-gray-600'>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Здесь вы найдете примеры работы нашей команды, демонстрирующие наш
               профессионализм, внимание к деталям и индивидуальный подход к
               каждому клиенту.
             </p>
           </div>
-          <ul className='mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+          <ul className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {projectList ? (
               projectList.map((i, index) => (
                 <ProjectsList
@@ -42,7 +41,9 @@ const Projects: React.FC = () => {
               <></>
             )}
           </ul>
-          <ProjectAction className='mt-20' />
+          <ButtonAction variant="link" className="mt-20">
+            Заказать ремонт
+          </ButtonAction>
         </div>
       </div>
     </>

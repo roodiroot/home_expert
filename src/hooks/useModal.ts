@@ -9,10 +9,10 @@ interface SubmitOrderState {
 const useModal = create<SubmitOrderState>((set) => ({
   isOpen: false,
   onOpen: () =>
-    set((state) => ({
+    set({
       isOpen: true,
-    })),
-  onClose: () => set((state) => ({ isOpen: false })),
+    }),
+  onClose: () => set({ isOpen: false }),
 }));
 
 export default useModal;

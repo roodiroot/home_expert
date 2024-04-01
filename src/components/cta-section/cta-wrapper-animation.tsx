@@ -13,7 +13,7 @@ const CTAWrapperAnimation = ({ children }: { children: React.ReactNode }) => {
   const borderRadius = useTransform(scrollYProgress, [0, 1], [0, 24]);
 
   return (
-    <div ref={ref} className="h-auto lg:h-[300vh]">
+    <div ref={ref} className="h-auto lg:h-[150vh]">
       <div className="lg:sticky lg:top-0 lg:left-0 lg:w-full lg:h-screen">
         <motion.div
           style={{ top: p, left: p, right: p, bottom: p, borderRadius }}

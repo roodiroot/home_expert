@@ -60,15 +60,17 @@ const PriceSection = () => {
                 </p>
                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
                   <span className="text-5xl font-bold tracking-tight text-gray-900">
-                    2 900
+                    3 890
                   </span>
                   <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">
                     РУБ.
                   </span>
                 </p>
-                <ButtonAction className="mt-10 w-full">
-                  Заказать ремонт
-                </ButtonAction>
+                <div className="w-full mt-10">
+                  <ButtonAction className=" mx-auto">
+                    Заказать ремонт
+                  </ButtonAction>
+                </div>
                 <p className="mt-6 text-xs leading-5 text-gray-600">
                   Снимем с Вас все заботы по поводу ремонта Вашей квартиры
                 </p>

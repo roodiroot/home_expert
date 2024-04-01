@@ -2,7 +2,7 @@ import { Icons } from "../ui/icons";
 
 const BunnerKondish = () => {
   return (
-    <div className="relative w-full overflow-hidden ">
+    <div className="relative w-full overflow-hidden pb-10">
       <div className="mx-auto max-w-7xl lg:flex sm:px-6 lg:px-8">
         <div className="relative w-full bg-[#F97316] p-6 sm:rounded-lg flex flex-col gap-y-4 items-start justify-between sm:flex-row">
           <div className="flex-1 max-w-lg text-balance">

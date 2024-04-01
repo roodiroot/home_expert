@@ -45,9 +45,15 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
 
   return (
     <>
-      <div className='absolute inset-0'>
-        <Carousel className='w-full h-full' setApi={setApi}>
-          <CarouselContent className='h-full'>
+      <div className="absolute inset-0">
+        <Carousel
+          opts={{
+            loop: true,
+          }}
+          className="w-full h-full"
+          setApi={setApi}
+        >
+          <CarouselContent className="h-full">
             {imgList.map((i, index) => (
               <CarouselItem key={index}>
                 <Image
@@ -55,7 +61,7 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
                   src={i}
                   width={700}
                   height={350}
-                  alt='portfolio screen'
+                  alt="portfolio screen"
                   onClick={openImageViewer}
                   className={cn(
                     "w-full h-full object-cover cursor-pointer",
@@ -67,7 +73,7 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
           </CarouselContent>
         </Carousel>
         {imgList.length > 1 && (
-          <div className='absolute bottom-4 left-4 flex gap-x-1 px-2 py-1 bg-gray-200/20 rounded-md'>
+          <div className="absolute bottom-4 left-4 flex gap-x-1 px-2 py-1 bg-gray-200/20 rounded-md">
             {imgList.map((_, index) => (
               <div
                 key={index}

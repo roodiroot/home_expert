@@ -1,5 +1,6 @@
 import AbsoluteElements from "@/components/absolute-elements/absolute-elements";
-import FooterSection from "@/components/ui/footer-section";
+import Navbar from "@/components/navbar/navbar";
+import FooterSection from "@/components/ui/footer/footer-section";
 
 export default function MainLayout({
   children,
@@ -8,12 +9,10 @@ export default function MainLayout({
 }) {
   return (
     <>
-      {/* <Script src='//code.jivo.ru/widget/xB4NlpkD2H' async /> */}
-      <section>
-        {children}
-        <FooterSection />
-        <AbsoluteElements />
-      </section>
+      <Navbar />
+      {children}
+      <FooterSection />
+      <AbsoluteElements />
     </>
   );
 }

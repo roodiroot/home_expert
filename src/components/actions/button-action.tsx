@@ -1,11 +1,26 @@
 "use client";
+
 import useModal from "@/hooks/useModal";
-import { Button } from "../ui/elements-button";
+import { Button } from "@/components/animation-component/button";
+import { LinkButton } from "../animation-component/link-button";
 
 interface ButtonActionProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-const ButtonAction: React.FC<ButtonActionProps> = ({ children, ...props }) => {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "link";
+}
+const ButtonAction: React.FC<ButtonActionProps> = ({
+  variant,
+  children,
+  ...props
+}) => {
   const { onOpen } = useModal();
+  if (variant === "link") {
+    return (
+      <LinkButton onClick={onOpen} {...props}>
+        {children}
+      </LinkButton>
+    );
+  }
   return (
     <Button onClick={onOpen} {...props}>
       {children}
