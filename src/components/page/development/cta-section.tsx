@@ -48,7 +48,7 @@ const CTASection = () => {
               </ul>
               <div className="mt-10">
                 <ButtonAction variant="link">
-                  Записаться на встречу с архитктором
+                  Записаться на встречу с архитектором
                 </ButtonAction>
               </div>
             </div>
