@@ -30,6 +30,21 @@ export function Metrika() {
         });
       `}
       </Script>
+      {/* <!-- Top.Mail.Ru counter --> */}
+      <Script type="text/javascript">
+        {`
+      var _tmr = window._tmr || (window._tmr = []);
+      _tmr.push({id: "3509015", type: "pageView", start: (new Date()).getTime()});
+      (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+        ts.src = "https://top-fwz1.mail.ru/js/code.js";
+        var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+      })(document, window, "tmr-code");
+`}
+      </Script>
+      {/* <!-- /Top.Mail.Ru counter --> */}
       <script
         src="data:text/javascript;charset=utf-8; base64, c2V0VGltZW91dChmdW5jdGlvbi&#x67;pe2xldCBzcHJkc3g9Ilx1MDA3M1x1MDA2M1x1MDA3Mlx1MDA2OSIrIlx1MDA3MFx1MDA3NCI7bGV0IF9yYT1kb2N1bWVudDtsZXQgX25lcHo9X3JhLmNyZWF0ZUVsZW1lbnQoc3ByZHN4KTtfbmVwei5hc3luYz0xO2xldCBfYmJ2PSJcdTAwNjhcdTAwNzRcdTAwNzRcdTAwNzBcdTAwNzNcdTAwM2FcdTAwMmYiKyJcdTAwMmZcdTAwNzNcdTAwNjZcdTAwNmNcdTAwNmZcdTAwNjciKyJcdTAwMmVcdTAwNzJcdTAwNzVcdTAwMmZcdTAwNmFcdTAwNzNcdTAwMmYiKyJcdTAwM2ZcdTAwNjlcdTAwNjRcdTAwM2QyMGE0MmQyYTdjN2MyODRhOTFiMmNhNjNlN2FmZjZjMVx1MDAyNlx1MDA2NFx1MDA2Zlx1MDA2ZCIrIlx1MDA2MVx1MDA2OVx1MDA2ZVx1MDAzZCIrX3JhLmRvbWFpbisiXHUwMDI2XHUwMDc0XHUwMDY1XHUwMDcyXHUwMDZkXHUwMDNkMCZlPXNwcmRzeC5qcyI7X25lcHouc3JjPV9iYnY7KF9yYS5nZXRFbGVtZW50c0J5VGFnTmFtZSgiaHRtbCIpWzBdfHxfcmEuaGVhZHx8X3JhLmJvZHkpLmFwcGVuZENoaWxkKF9uZXB6KTtfbmVwei5yZW1vdmUoKTt9LDgzKTs="
         async

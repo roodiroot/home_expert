@@ -2,6 +2,7 @@ import BenefitsSection from "@/components/page/development/benefits/benefits-sec
 import CarouselSection from "@/components/page/development/caorusel-section/carousel-section";
 import CTASection from "@/components/page/development/cta-section";
 import HeroBlock from "@/components/page/development/hero-block";
+import PriceSection from "@/components/page/development/price-section/price-section";
 import TypesSection from "@/components/page/development/types/types-section";
 import ContactSection from "@/components/page/main-page/contact-section";
 import { FaqSection } from "@/components/page/main-page/faq-section";
@@ -20,6 +21,11 @@ export default function Home() {
       <HeroBlock />
       <BenefitsSection />
       <TypesSection />
+      <PriceSection
+        head="Доступное качество для вашего будущего дома"
+        description="Ознакомьтесь с нашими актуальными ценами на строительство домов. Мы
+        предлагаем гибкие ценовые планы для различных типов и размеров домов."
+      />
       <CTASection />
       <CarouselSection />
       <FaqSection faqList={FAQListDew} />

@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://home-expert.su/price-construction",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
       url: "https://home-expert.su/renovation",
       lastModified: new Date(),
       changeFrequency: "monthly",

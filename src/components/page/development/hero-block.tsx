@@ -1,6 +1,6 @@
-import ButtonAction from "@/components/actions/button-action";
-import { Button } from "@/components/animation-component/button";
 import Image from "next/image";
+
+import ButtonAction from "@/components/actions/button-action";
 
 const HeroBlock = () => {
   return (

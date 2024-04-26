@@ -2,11 +2,12 @@
 
 import useModal from "@/hooks/useModal";
 import { Button } from "@/components/animation-component/button";
+import { Button as ClassicButton } from "@/components/ui/elements-button";
 import { LinkButton } from "../animation-component/link-button";
 
 interface ButtonActionProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "link";
+  variant?: "link" | "default";
 }
 const ButtonAction: React.FC<ButtonActionProps> = ({
   variant,
@@ -19,6 +20,13 @@ const ButtonAction: React.FC<ButtonActionProps> = ({
       <LinkButton onClick={onOpen} {...props}>
         {children}
       </LinkButton>
+    );
+  }
+  if (variant === "default") {
+    return (
+      <ClassicButton onClick={onOpen} {...props}>
+        {children}
+      </ClassicButton>
     );
   }
   return (
