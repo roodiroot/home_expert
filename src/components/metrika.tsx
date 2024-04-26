@@ -31,7 +31,7 @@ export function Metrika() {
       `}
       </Script>
       {/* <!-- Top.Mail.Ru counter --> */}
-      <Script type="text/javascript">
+      <Script id="vk-pixel" type="text/javascript">
         {`
       var _tmr = window._tmr || (window._tmr = []);
       _tmr.push({id: "3509015", type: "pageView", start: (new Date()).getTime()});
