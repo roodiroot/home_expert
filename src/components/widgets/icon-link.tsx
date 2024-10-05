@@ -14,6 +14,8 @@ const IconLink: React.FC<{ index: number; link: SOCIALType }> = ({
     <motion.a
       href={link.link}
       style={{ background: link.bg, top: translate }}
+      target="_blank"
+      onClick={() => link.func && link.func()}
       initial={{
         opacity: 0,
         translateY: `${(index + 1) * 100}%`,
