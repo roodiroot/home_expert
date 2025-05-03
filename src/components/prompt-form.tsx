@@ -6,6 +6,7 @@ import { InputElement } from "./ui/input-element";
 import PolicyText from "./ui/policy-text";
 import { sendMessage } from "@/lib/send-message";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 type PromptForm = {
   name: string;
@@ -13,6 +14,7 @@ type PromptForm = {
 };
 
 const PromptForm = () => {
+  const [checked, setChecked] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const {
     register,
@@ -22,6 +24,12 @@ const PromptForm = () => {
   } = useForm<PromptForm>();
 
   const onSubmit: SubmitHandler<PromptForm> = async (data) => {
+    if (!checked) {
+      toast.info(
+        "Вы должны согласиться с условиями обработки персональных данных"
+      );
+      return;
+    }
     setDisabled(true);
     await sendMessage(data)
       .then((d) => {
@@ -41,40 +49,45 @@ const PromptForm = () => {
   const regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
   return (
     <form
-      className='max-w-xl w-full lg:col-span-6 pt-2'
+      className="max-w-xl w-full lg:col-span-6 pt-2"
       onClick={(e) => {
         e.preventDefault();
       }}
     >
-      <div className='flex gap-4 flex-col items-start sm:flex-row sm:items-end'>
+      <div className="flex gap-4 flex-col items-start sm:flex-row sm:items-end">
         <InputElement
-          variant='dark'
-          id='name'
+          variant="dark"
+          id="name"
           labelOn
-          placeholder='Введите имя'
-          label='Имя*'
+          placeholder="Введите имя"
+          label="Имя*"
           {...register("name", { required: true })}
           ariaInvalid={errors.name ? true : false}
         />
         <InputElement
-          variant='dark'
+          variant="dark"
           labelOn
-          placeholder='Введите телефон'
-          id='phone'
-          inputMode='tel'
-          label='Телефон*'
+          placeholder="Введите телефон"
+          id="phone"
+          inputMode="tel"
+          label="Телефон*"
           {...register("phone", { pattern: regExp, required: true })}
           ariaInvalid={errors.phone ? true : false}
         />
         <Button
-          className='bg-white hover-bg-white/90 text-gray-900'
+          className="bg-white hover-bg-white/90 text-gray-900"
           disabled={disabled}
           onClick={handleSubmit(onSubmit)}
         >
           Отправить
         </Button>
       </div>
-      <PolicyText variant='dark' />
+      <PolicyText
+        className="mt-4"
+        checked={checked}
+        setChanged={setChecked}
+        variant="dark"
+      />
     </form>
   );
 };

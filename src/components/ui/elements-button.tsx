@@ -22,14 +22,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "text-sm font-semibold",
           item && "flex items-center gap-x-2",
           !variant &&
-            "rounded-md bg-accent-600 px-3.5 py-2.5 text-white shadow-sm hover:bg-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600",
+            "rounded-full bg-accent-600 px-3.5 py-2.5 text-white shadow-sm hover:bg-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600",
           variant === "link" && "leading-6 text-gray-900",
           disabled && "bg-accent-500",
           className
         )}
       >
-        <span className='whitespace-nowrap'>{children}</span>
-        {arrow && <span aria-hidden='true'>&rarr;</span>}
+        <span className="whitespace-nowrap">{children}</span>
+        {arrow && <span aria-hidden="true">&rarr;</span>}
         <span>{item}</span>
       </button>
     );

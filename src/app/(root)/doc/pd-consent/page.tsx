@@ -5,7 +5,9 @@ import { getAllDocumentByTitle } from "@/data/doc-api";
 import { DownloadIcon } from "lucide-react";
 
 export default async function PrivacyPage() {
-  const policy = await getAllDocumentByTitle("Политика конфиденциальности");
+  const policy = await getAllDocumentByTitle(
+    "СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ"
+  );
   const fileLink = policy?.document?.file?.node?.link || "";
 
   return (
@@ -14,7 +16,7 @@ export default async function PrivacyPage() {
         <div className="mt-28">
           <H2Element text="Документы" />
           <TitleElement
-            text="Политика по использованию персональных данных"
+            text="СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ"
             className="mt-2"
           />
           <ContentMarkdown content={policy?.document?.content} />

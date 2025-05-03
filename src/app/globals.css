@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './markdown.css';
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,3 +20,4 @@ body {
 /* .styles-module_wrapper__1I_qj {
   @apply bg-black/80;
 } */
+

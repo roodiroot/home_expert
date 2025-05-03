@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 
 interface PortfolioImgViewerProps
   extends React.ImgHTMLAttributes<HTMLImageElement> {
-  imgList: string[];
+  imgList: (string | undefined)[];
 }
 
 const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
@@ -54,22 +54,25 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
           setApi={setApi}
         >
           <CarouselContent className="h-full">
-            {imgList.map((i, index) => (
-              <CarouselItem key={index}>
-                <Image
-                  {...props}
-                  src={i}
-                  width={700}
-                  height={350}
-                  alt="portfolio screen"
-                  onClick={openImageViewer}
-                  className={cn(
-                    "w-full h-full object-cover cursor-pointer",
-                    className
-                  )}
-                />
-              </CarouselItem>
-            ))}
+            {imgList?.map((i, index) => {
+              if (!i) return null;
+              return (
+                <CarouselItem key={index}>
+                  <Image
+                    {...props}
+                    src={i}
+                    width={700}
+                    height={350}
+                    alt="portfolio screen"
+                    onClick={openImageViewer}
+                    className={cn(
+                      "w-full h-full object-cover cursor-pointer",
+                      className
+                    )}
+                  />
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
         </Carousel>
         {imgList.length > 1 && (
@@ -88,7 +91,7 @@ const PortfolioImgViewer: React.FC<PortfolioImgViewerProps> = ({
       </div>
       {isViewerOpen && (
         <ImageViewer
-          src={imgList}
+          src={imgList.filter((img) => img !== undefined) as string[]}
           currentIndex={current}
           disableScroll={true}
           closeOnClickOutside={true}

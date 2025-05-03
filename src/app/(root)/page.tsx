@@ -1,13 +1,17 @@
-import BenefitsSection from "@/components/page/development/benefits/benefits-section";
-import CarouselSection from "@/components/page/development/caorusel-section/carousel-section";
-import CTASection from "@/components/page/development/cta-section";
-import HeroBlock from "@/components/page/development/hero-block";
-import PriceSection from "@/components/page/development/price-section/price-section";
-import TypesSection from "@/components/page/development/types/types-section";
-import ContactSection from "@/components/page/main-page/contact-section";
-import { FaqSection } from "@/components/page/main-page/faq-section";
-import { FAQListDew } from "@/utils/constance";
+import HeroBlock from "@/components/page/noise-page/hero-block";
+import ContactSection from "@/components/page/noise-page/contact-section";
+import FeaturesSection from "@/components/page/noise-page/features-section/features-section";
+import PriceSection from "@/components/page/noise-page/price-section/price-section";
+import ProjectSection from "@/components/page/noise-page/project-section/project-section";
+
+import { FaqSection } from "@/components/page/noise-page/faq-section";
+import { getAllFAQBlock } from "@/data/faq-api";
+import { getAllProjects } from "@/data/projects-api";
+import { getAllServicesPrice } from "@/data/serviceprice-api";
+import { getAllNoiseContent } from "@/data/type-noise-api";
 import { Metadata } from "next";
+import SendMessageSection from "@/components/page/noise-page/send-message-section";
+import ContentSection from "@/components/page/noise-page/content-page";
 
 export const metadata: Metadata = {
   title: "Загородное строительство",
@@ -15,20 +19,21 @@ export const metadata: Metadata = {
     "Строим каркасные дома, дома из кирпича и газобетона. С индивидуальной и типовой архитектурой.",
 };
 
-export default function Home() {
+export default async function HomePage() {
+  const noiseContent = await getAllNoiseContent();
+  const projects = await getAllProjects();
+  const faqs = await getAllFAQBlock();
+  const servisesPrice = await getAllServicesPrice();
+
   return (
     <>
       <HeroBlock />
-      <BenefitsSection />
-      <TypesSection />
-      <PriceSection
-        head="Доступное качество для вашего будущего дома"
-        description="Ознакомьтесь с нашими актуальными ценами на строительство домов. Мы
-        предлагаем гибкие ценовые планы для различных типов и размеров домов."
-      />
-      <CTASection />
-      <CarouselSection />
-      <FaqSection faqList={FAQListDew} />
+      <ContentSection />
+      <PriceSection priceList={servisesPrice} />
+      <FeaturesSection noiseContent={noiseContent} />
+      <SendMessageSection />
+      <ProjectSection projectList={projects} />
+      <FaqSection faqList={faqs} />
       <ContactSection />
     </>
   );

@@ -10,6 +10,7 @@ import { InputElement } from "@/components/ui/input-element";
 import { sendMessage } from "@/lib/send-message";
 import useModal from "@/hooks/useModal";
 import PolicyText from "@/components/ui/policy-text";
+import { toast } from "react-toastify";
 
 type InputsModalForm = {
   name: string;
@@ -19,6 +20,7 @@ type InputsModalForm = {
 const ModalSendOrder = () => {
   const { isOpen, onClose } = useModal();
   const [disabled, setDisabled] = useState(false);
+  const [checked, setChecked] = useState(false);
   const {
     register,
     handleSubmit,
@@ -26,6 +28,12 @@ const ModalSendOrder = () => {
     formState: { errors },
   } = useForm<InputsModalForm>();
   const onSubmit: SubmitHandler<InputsModalForm> = async (data) => {
+    if (!checked) {
+      toast.info(
+        "Вы должны согласиться с условиями обработки персональных данных"
+      );
+      return;
+    }
     setDisabled(true);
     await sendMessage(data)
       .then((d) => {
@@ -77,7 +85,7 @@ const ModalSendOrder = () => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-[40px] bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 sm:hidden">
@@ -128,6 +136,13 @@ const ModalSendOrder = () => {
                     </div>
                   </div>
                 </div>
+                <div className="bg-gray-50 px-4 pb-3 sm:flex sm:px-6">
+                  <PolicyText
+                    checked={checked}
+                    setChanged={setChecked}
+                    className="mt-0"
+                  />
+                </div>
                 <div className="bg-gray-50 px-4 py-3 flex flex-col sm:flex-row-reverse sm:px-6 gap-3">
                   <Button
                     disabled={disabled}
@@ -138,15 +153,12 @@ const ModalSendOrder = () => {
                   </Button>
                   <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                    className="inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                     onClick={() => onClose()}
                     ref={cancelButtonRef}
                   >
                     Отмена
                   </button>
-                </div>
-                <div className="bg-gray-50 px-4 pb-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <PolicyText onClick={() => onClose()} className="mt-0" />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

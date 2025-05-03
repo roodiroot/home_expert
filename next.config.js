@@ -2,6 +2,14 @@
 const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp'],
+        remotePatterns: [
+            {
+              protocol: 'http',
+              hostname: 'admin.home-expert.su',
+              port: '',
+              pathname: '/**',
+            },
+          ],
     }
 };
 

@@ -1,32 +1,45 @@
 import { cn } from "@/lib/utils";
-import { PRIVACY_PAGE } from "@/utils/path";
-import Link from "next/link";
+import { PDCONTENT_PAGE } from "@/utils/path";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface PolicyText extends React.HtmlHTMLAttributes<HTMLElement> {
+  setChanged?: (changed: boolean) => void;
+  checked?: boolean;
   variant?: "light" | "dark";
 }
 
-const PolicyText: React.FC<PolicyText> = ({ className, variant, ...props }) => {
+const PolicyText: React.FC<PolicyText> = ({
+  className,
+  variant,
+  checked,
+  setChanged,
+  ...props
+}) => {
   return (
-    <p
-      {...props}
-      className={cn(
-        "mt-4 text-sm leading-6",
-        variant === "dark" ? "text-white/90" : "text-gray-900",
-        className
-      )}
-    >
-      Мы заботимся о ваших данных. Прочтите нашу{" "}
-      <Link
+    <div className={cn("flex items-center space-x-2", className)} {...props}>
+      <Checkbox
+        checked={checked}
+        onCheckedChange={() => setChanged && setChanged(!checked)}
+      />
+      <div
         className={cn(
-          "font-semibold",
-          variant === "dark" ? "text-white" : "text-accent-600"
+          "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+          variant === "dark" ? "text-white" : "text-gray-900"
         )}
-        href={PRIVACY_PAGE}
       >
-        политику конфиденциальности.
-      </Link>
-    </p>
+        Согласие на обработку{" "}
+        <a
+          target="_blank"
+          className={cn(
+            "font-semibold text-accent-600",
+            variant === "dark" && "text-white underline"
+          )}
+          href={PDCONTENT_PAGE}
+        >
+          персональных данных.
+        </a>
+      </div>
+    </div>
   );
 };
 
