@@ -12,6 +12,7 @@ import { getAllNoiseContent } from "@/data/type-noise-api";
 import { Metadata } from "next";
 import SendMessageSection from "@/components/page/noise-page/send-message-section";
 import ContentSection from "@/components/page/noise-page/content-page";
+import TabsSection from "@/components/page/noise-page/tabs-section";
 
 export const metadata: Metadata = {
   title: "Загородное строительство",
@@ -30,6 +31,7 @@ export default async function HomePage() {
       <HeroBlock />
       <ContentSection />
       <PriceSection priceList={servisesPrice} />
+      <TabsSection />
       <FeaturesSection noiseContent={noiseContent} />
       <SendMessageSection />
       <ProjectSection projectList={projects} />

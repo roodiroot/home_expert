@@ -11,7 +11,7 @@ const PriceSection: React.FC<PriceSectionProps> = ({ priceList }) => {
     <div className="bg-white pb-24 pt-20 lg:pt-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <CounterSection />
-        <PriceList priceList={priceList} />
+        {/* <PriceList priceList={priceList} /> */}
       </div>
     </div>
   );

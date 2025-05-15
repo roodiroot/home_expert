@@ -3,6 +3,7 @@
 import InfoInput from "@/components/counter-inputs/info-input";
 import RangeInput from "@/components/counter-inputs/range-input";
 import SelectInput from "@/components/counter-inputs/select-input";
+import SelectInputNoise from "@/components/counter-inputs/select-input-noise";
 import { Button } from "@/components/ui/elements-button";
 import PolicyText from "@/components/ui/policy-text";
 import { sendMessage } from "@/lib/send-message";
@@ -12,10 +13,28 @@ import { toast } from "react-toastify";
 
 const defaultValue = 20;
 const typeValue = [
-  { name: "Потолок", value: "750" },
-  { name: "Стены", value: "1700" },
-  { name: "Перегородки", value: "500" },
-  { name: "Пол", value: "2500" },
+  {
+    name: "Потолок (Бескаркасная изоляция)",
+    sericeValue: 700,
+    materialValue: 500,
+  },
+  {
+    name: "Потолок (Каркасная изоляция)",
+    sericeValue: 2500,
+    materialValue: 1700,
+  },
+  {
+    name: "Стены (Бескаркасная изоляция)",
+    sericeValue: 1500,
+    materialValue: 2000,
+  },
+  {
+    name: "Стены (Каркасная изоляция)",
+    sericeValue: 2200,
+    materialValue: 2500,
+  },
+  { name: "Перегородки", sericeValue: 1700, materialValue: 2500 },
+  { name: "Пол", sericeValue: 450, materialValue: 350 },
 ];
 
 export type CounterForm = {
@@ -27,9 +46,10 @@ interface CounterFormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const [checked, setChecked] = useState(false);
   const [square, setSquare] = useState(defaultValue);
-  const [type, setType] = useState("0");
+  const [type, setType] = useState("");
 
-  const [summ, setSumm] = useState(0);
+  const [summService, setSummService] = useState(0);
+  const [summMaterial, setSummMaterial] = useState(0);
   const [disabled, setDisabled] = useState(false);
 
   const {
@@ -47,7 +67,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
       return;
     }
     setDisabled(true);
-    await sendMessage({ ...data, square, type, summ })
+    await sendMessage({ ...data, square, type, summMaterial, summService })
       .then((d) => {
         if (d) {
           //@ts-ignore
@@ -65,7 +85,13 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
   const regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 
   useEffect(() => {
-    setSumm(square * +type);
+    // setSumm(square * +type);
+    typeValue.map((i) => {
+      if (i.name === type) {
+        setSummMaterial(square * i.materialValue);
+        setSummService(square * i.sericeValue);
+      }
+    });
   }, [square, type]);
 
   return (
@@ -78,7 +104,7 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
           setValue={setSquare}
           defaultValue={defaultValue}
         />
-        <SelectInput
+        <SelectInputNoise
           title="2. Тип поверхности"
           label="Типы поверхности"
           setValue={setType}
@@ -106,13 +132,29 @@ const CounterForm: React.FC<CounterFormProps> = ({ className }) => {
         </div>
       </div>
       <div className="mt-10 flex justify-between items-end border-t pt-8">
-        <div className="font-bold text-5xl text-accent-600">
-          {new Intl.NumberFormat("ru-RU", {
-            style: "currency",
-            currency: "RUB",
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-          }).format(summ)}
+        <div className="flex flex-col gap-4">
+          <div className="">
+            <div className="text-accent-600 text-sm">Монтаж:</div>
+            <div className="font-bold text-4xl text-accent-600">
+              {new Intl.NumberFormat("ru-RU", {
+                style: "currency",
+                currency: "RUB",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              }).format(summService)}
+            </div>
+          </div>
+          <div className="">
+            <div className="text-accent-600 text-sm">Материал:</div>
+            <div className="font-bold text-4xl text-accent-600">
+              {new Intl.NumberFormat("ru-RU", {
+                style: "currency",
+                currency: "RUB",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              }).format(summMaterial)}
+            </div>
+          </div>
         </div>
         <Button disabled={disabled} onClick={handleSubmit(onSubmit)}>
           Отправить заявку

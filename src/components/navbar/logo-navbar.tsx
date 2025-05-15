@@ -14,8 +14,8 @@ const LogoNavbar = () => {
     return;
   };
   return (
-    <div className="">
-      <Logo className="hidden h-14 sm:block" type={subTitleLogo()} />
+    <div className="absolute left-0 top-1/2 -translate-y-1/2">
+      <Logo className="h-10 sm:h-12" type={subTitleLogo()} />
     </div>
   );
 };
