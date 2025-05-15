@@ -9,12 +9,26 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://home-expert.su"),
   title: {
-    template: "%s | ДомЭксперт - строительство и ремонт.",
-    default: "ДомЭксперт - загородное строительство и ремонт помещений.",
+    template: "%s | ДомЭксперт.",
+    default: "ДомЭксперт - шумоизоляция и звукоизоляция любых помещений.",
   },
   description:
-    "Современный ремонт и строительство домов. Строительство под ключ. Лучшие специалисты по ремонту квартир",
-  icons: "/logo_196.png",
+    "Быстрый подбор, монтаж за 1 день, проверенные материалы. Бесплатный замер и расчет.",
+  openGraph: {
+    title: "Готовые решения шумоизоляции в Москве — Эффективно и Под Ключ",
+    description:
+      "Предлагаем готовые решения для шумоизоляции квартир, домов и коммерческих помещений в Москве.",
+    url: "https://home-expert.su",
+    siteName: "Шумоизоляция в Москве",
+    images: [
+      {
+        url: "/image/openGraph/noise.jpg", // Replace with your actual image URL
+        width: 825,
+        height: 440,
+        alt: "Шумоизоляция",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
