@@ -15,9 +15,25 @@ import ContentSection from "@/components/page/noise-page/content-page";
 import TabsSection from "@/components/page/noise-page/tabs-section";
 
 export const metadata: Metadata = {
-  title: "Загородное строительство",
+  title: "Готовые решения шумоизоляции в Москве — Эффективно и Под Ключ",
   description:
-    "Строим каркасные дома, дома из кирпича и газобетона. С индивидуальной и типовой архитектурой.",
+    "Предлагаем готовые решения для шумоизоляции квартир, домов и коммерческих помещений в Москве. Быстрый подбор, монтаж за 1 день, проверенные материалы. Бесплатный замер и расчет.",
+  openGraph: {
+    title: "Готовые решения шумоизоляции в Москве — Эффективно и Под Ключ",
+    description:
+      "Предлагаем готовые решения для шумоизоляции квартир, домов и коммерческих помещений в Москве. Быстрый подбор, монтаж за 1 день, проверенные материалы. Бесплатный замер и расчет.",
+    url: "https://home-expert.su/",
+    siteName: "Шумоизоляция",
+    images: [
+      {
+        url: "/public/image/openGraph/noise.jpg", // Replace with your actual image URL
+        width: 825,
+        height: 440,
+        alt: "Шумоизоляция в Москве",
+      },
+    ],
+    locale: "ru_RU",
+  },
 };
 
 export default async function HomePage() {
