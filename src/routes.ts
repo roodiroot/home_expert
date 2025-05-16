@@ -5,7 +5,8 @@ export const navMenuRoutes = [
   { name: "Контакты", link: "/contacts" },
 ];
 export const publicRoutes = [
-  { name: "Строительство", link: "/" },
+  { name: "Шумоизоляция", link: "/" },
+  { name: "Строительство", link: "/construction" },
   { name: "Ремонт", link: "/renovation" },
   { name: "О компании", link: "/about" },
   { name: "Контакты", link: "/contacts" },

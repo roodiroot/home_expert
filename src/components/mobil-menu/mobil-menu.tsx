@@ -7,6 +7,7 @@ import { publicRoutes } from "@/routes";
 import { usePathname, useRouter } from "next/navigation";
 import { useDisableBodyScroll } from "@/hooks/use-disable-body-scroll";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 interface MenuMobilProps extends React.HtmlHTMLAttributes<HTMLElement> {}
 
@@ -14,6 +15,10 @@ const MenuMobil: React.FC<MenuMobilProps> = ({ className }) => {
   const pathname = usePathname();
   const { isOpen, onClose } = useMenu();
   const router = useRouter();
+
+  useEffect(() => {
+    onClose();
+  }, [pathname]);
 
   useDisableBodyScroll(isOpen);
 
