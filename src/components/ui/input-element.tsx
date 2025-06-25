@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface InputElementProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
-  label: string;
+  label?: string;
   labelOn?: boolean;
   ariaInvalid?: boolean;
   variant?: "light" | "dark";
@@ -27,17 +27,19 @@ const InputElement = React.forwardRef<HTMLInputElement, InputElementProps>(
   ) => {
     return (
       <div className={cn("w-full", className)}>
-        <label
-          htmlFor={id}
-          className={cn(
-            labelOn
-              ? "block text-start text-sm font-semibold leading mb-2.5"
-              : "sr-only",
-            variant === "dark" ? "text-white/90" : "text-gray-900"
-          )}
-        >
-          {label}
-        </label>
+        {label && (
+          <label
+            htmlFor={id}
+            className={cn(
+              labelOn
+                ? "block text-start text-sm font-semibold leading mb-2.5"
+                : "sr-only",
+              variant === "dark" ? "text-white/90" : "text-gray-900"
+            )}
+          >
+            {label}
+          </label>
+        )}
         <input
           ref={ref}
           {...props}

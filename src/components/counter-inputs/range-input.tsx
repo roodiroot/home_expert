@@ -5,6 +5,7 @@ import { memo } from "react";
 import { Slider } from "../ui/slider";
 import { cn } from "@/lib/utils";
 import CounterTitleElement from "../counter-page-components/counter-title-element";
+import { InputElement } from "../ui/input-element";
 
 const min = 10;
 const max = 200;
@@ -29,8 +30,20 @@ const RangeInput: React.FC<RangeInputProps> = ({
   return (
     <div className={cn(className)}>
       <CounterTitleElement title={title} description={description} />
-      <div className='relative block mt-12 pb-7'>
-        <span className='absolute left-0 -top-7 text-sm'>
+      <div className="max-w-24 flex items-end gap-2 mt-4">
+        <InputElement
+          id="range_input"
+          label=""
+          type="number"
+          value={value}
+          onChange={(e) => setValue(Number(e.target.value))}
+        />
+        <div className="mb-2">
+          м<sup>2</sup>
+        </div>
+      </div>
+      <div className="relative block mt-12 pb-7">
+        <span className="absolute left-0 -top-7 text-sm">
           {min}м<sup>2</sup>
         </span>
         <Slider
@@ -40,7 +53,7 @@ const RangeInput: React.FC<RangeInputProps> = ({
           value={[value]}
           defaultValue={[defaultValue]}
         />
-        <span className='absolute right-0 -top-7 text-sm'>
+        <span className="absolute right-0 -top-7 text-sm">
           {max}м<sup>2</sup>
         </span>
       </div>
