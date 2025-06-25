@@ -35,6 +35,7 @@ const RangeInput: React.FC<RangeInputProps> = ({
           id="range_input"
           label=""
           type="number"
+          inputMode="numeric"
           value={value}
           onChange={(e) => setValue(Number(e.target.value))}
         />
